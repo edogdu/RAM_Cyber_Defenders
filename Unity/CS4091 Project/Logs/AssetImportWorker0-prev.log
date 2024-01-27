@@ -15,11 +15,11 @@ C:/Users/Zhili/Desktop/Project/RAM/Unity/CS4091 Project
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-50686
+51007
 Successfully changed project path to: C:/Users/Zhili/Desktop/Project/RAM/Unity/CS4091 Project
 C:/Users/Zhili/Desktop/Project/RAM/Unity/CS4091 Project
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 15.68 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 29.04 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56532
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56832
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.000925 seconds.
+Registered in 0.000921 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 14.67 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 23.49 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.282 seconds
+- Completed reload, in  1.377 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002252 seconds.
+Registered in 0.003834 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.21 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 22.47 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.505 seconds
+- Completed reload, in  0.601 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.19 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.47 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1470 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 67.3 MB.
-System memory in use after: 67.3 MB.
+Unloading 2552 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 112.0 MB.
 
-Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 1904.
-Total: 1.028500 ms (FindLiveObjects: 0.069500 ms CreateObjectMapping: 0.018200 ms MarkObjects: 0.901800 ms  DeleteObjects: 0.038300 ms)
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 2991.
+Total: 1.417800 ms (FindLiveObjects: 0.124200 ms CreateObjectMapping: 0.031300 ms MarkObjects: 1.212500 ms  DeleteObjects: 0.049000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -80,62 +80,351 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Scenes
-  artifactKey: Guid(23d083f7e802ab94a8bc1eccdab86bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(23d083f7e802ab94a8bc1eccdab86bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b376e9eb017b4a252f2e83632ee71830') in 0.003336 seconds 
-  Import took 0.004976 seconds .
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Left Controller.preset
+  artifactKey: Guid(ffd8268f7307a0c48a067dad4a8fe060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Left Controller.preset using Guid(ffd8268f7307a0c48a067dad4a8fe060) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8202f70570fd72e99421cb8d2ea3665b') in 0.032197 seconds 
+  Import took 0.034314 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000123 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85059f4f9e1a832ed95adaa0d25c5c4c') in 0.005815 seconds 
-  Import took 0.006989 seconds .
+  Time since last request: 0.000142 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Gaze Controller.preset
+  artifactKey: Guid(2e6e6d902741c934ba75a28389d4f66e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Gaze Controller.preset using Guid(2e6e6d902741c934ba75a28389d4f66e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af4bc65f83590b8dfddfe5e1abd483f8') in 0.004023 seconds 
+  Import took 0.005999 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.978366 seconds.
-  path: Assets/Scenes/VR Project.unity
-  artifactKey: Guid(18ee5482bb3fec940b594ced32fe82ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VR Project.unity using Guid(18ee5482bb3fec940b594ced32fe82ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bde4cbbd8a10471afcbc8e387af86d87') in 0.002951 seconds 
-  Import took 0.004260 seconds .
+  Time since last request: 0.000132 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Right Controller.preset
+  artifactKey: Guid(1421ad86ff3787b4dae70fe9e699a25f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Right Controller.preset using Guid(1421ad86ff3787b4dae70fe9e699a25f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b12b11031ae712b5934f79749e79f5b6') in 0.005231 seconds 
+  Import took 0.007386 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000727 seconds.
-  path: Assets/Scenes/VR Project.unity
-  artifactKey: Guid(18ee5482bb3fec940b594ced32fe82ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VR Project.unity using Guid(18ee5482bb3fec940b594ced32fe82ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bde4cbbd8a10471afcbc8e387af86d87') in 0.001840 seconds 
-  Import took 0.003147 seconds .
+  Time since last request: 24.713473 seconds.
+  path: Assets/Samples
+  artifactKey: Guid(a368cc90c0d9b6d41a024948e4f50079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples using Guid(a368cc90c0d9b6d41a024948e4f50079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f15b96136aac8435d5bfe5bcbf4338f9') in 0.002204 seconds 
+  Import took 0.004330 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.486717 seconds.
+  Time since last request: 5.340038 seconds.
   path: Assets/XR/XRGeneralSettingsPerBuildTarget.asset
   artifactKey: Guid(1f9af0c660a33be49bfd93809a7fc011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/XR/XRGeneralSettingsPerBuildTarget.asset using Guid(1f9af0c660a33be49bfd93809a7fc011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a45df4a765b6e9c44b65048a145d689') in 0.021579 seconds 
-  Import took 0.022943 seconds .
+Start importing Assets/XR/XRGeneralSettingsPerBuildTarget.asset using Guid(1f9af0c660a33be49bfd93809a7fc011) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [XR] Error loading subsystem: Display (1) (header mismatch?)
+ -> (artifact id: '1a6238354a8a834f78c7ef60a330574f') in 0.038534 seconds 
+  Import took 0.040838 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.558135 seconds.
+  path: Packages/com.unity.xr.management
+  artifactKey: Guid(7261f87f4da69cdd49931374cabce6bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.management using Guid(7261f87f4da69cdd49931374cabce6bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd322ce031f94c3e3cdaba904c824a3ec') in 0.001876 seconds 
+  Import took 0.004964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.053571 seconds.
+  path: Packages/com.unity.xr.management/package.json
+  artifactKey: Guid(a8437ae6df3ab4de78c661f8e1148bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.management/package.json using Guid(a8437ae6df3ab4de78c661f8e1148bbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e327451d891baefbcaf9e289bb80687b') in 0.004432 seconds 
+  Import took 0.006479 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.899577 seconds.
+  path: Packages/com.unity.inputsystem
+  artifactKey: Guid(77f6a1a5fdaf4eb381a13f21eadbbce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.inputsystem using Guid(77f6a1a5fdaf4eb381a13f21eadbbce0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e491535fe12cde1f569ee0de5a3db332') in 0.002362 seconds 
+  Import took 0.004433 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.087986 seconds.
+  path: Packages/com.unity.inputsystem/package.json
+  artifactKey: Guid(f0e14ea80f96b445f97b1c83650d5733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.inputsystem/package.json using Guid(f0e14ea80f96b445f97b1c83650d5733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57b863bd84b7e0e68181d135b3e2cc9d') in 0.002111 seconds 
+  Import took 0.004242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.243913 seconds.
+  path: Packages/com.unity.inputsystem/InputSystem
+  artifactKey: Guid(7be622e2320c433e83fcfd2dbb7bd468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.inputsystem/InputSystem using Guid(7be622e2320c433e83fcfd2dbb7bd468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c029133d81184748dc1b9064c1bfd7fb') in 0.002299 seconds 
+  Import took 0.004482 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.055223 seconds.
+  path: Packages/com.unity.inputsystem/InputSystem/Unity.InputSystem.asmdef
+  artifactKey: Guid(75469ad4d38634e559750d17036d5f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.inputsystem/InputSystem/Unity.InputSystem.asmdef using Guid(75469ad4d38634e559750d17036d5f7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba7eefd68f4199a1cac002f4e77b7fe2') in 0.003355 seconds 
+  Import took 0.005370 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.471306 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Continuous Move.preset
+  artifactKey: Guid(91f9da00cfdac5d49955df2d2d820b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Continuous Move.preset using Guid(91f9da00cfdac5d49955df2d2d820b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '846913bc3ff5a8e21c14ea41388c827a') in 0.004167 seconds 
+  Import took 0.006456 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000150 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Snap Turn.preset
+  artifactKey: Guid(18697d253d848974aa7052cba872c9f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Snap Turn.preset using Guid(18697d253d848974aa7052cba872c9f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f345d654cd5fad8dce1349f0b464311') in 0.004018 seconds 
+  Import took 0.006038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000133 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Left Grab Move.preset
+  artifactKey: Guid(e2e08fffc3edfbb47a429bae0c5a6343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Left Grab Move.preset using Guid(e2e08fffc3edfbb47a429bae0c5a6343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b83b95fdddc1e866f52ac4240516cba') in 0.004116 seconds 
+  Import took 0.006067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000131 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Input Actions.inputactions
+  artifactKey: Guid(c348712bda248c246b8c49b3db54643f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Input Actions.inputactions using Guid(c348712bda248c246b8c49b3db54643f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ebddc992069c361fc2a4da8c0f649c3') in 0.009281 seconds 
+  Import took 0.011528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Continuous Turn.preset
+  artifactKey: Guid(0caad3af14f9a414dbdf25ed41e5aa47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Continuous Turn.preset using Guid(0caad3af14f9a414dbdf25ed41e5aa47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da3634e757ef1faaa0c6131ae0e7eba6') in 0.004039 seconds 
+  Import took 0.006058 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000132 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default XR UI Input Module.preset
+  artifactKey: Guid(2c3e7ff9ab352b74da862a5a8779b276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default XR UI Input Module.preset using Guid(2c3e7ff9ab352b74da862a5a8779b276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92e8afb58cc5f2c48b7a51cc87d9c26a') in 0.004964 seconds 
+  Import took 0.007035 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000135 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Right Grab Move.preset
+  artifactKey: Guid(fdc4f514b7b1e9c4eb39713ad9dd4eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Right Grab Move.preset using Guid(fdc4f514b7b1e9c4eb39713ad9dd4eba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdab18af251b713db32460f599835ef3') in 0.002633 seconds 
+  Import took 0.004553 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000145 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Input Actions.inputactions
+  artifactKey: Guid(c348712bda248c246b8c49b3db54643f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/XRI Default Input Actions.inputactions using Guid(c348712bda248c246b8c49b3db54643f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ebddc992069c361fc2a4da8c0f649c3') in 0.007869 seconds 
+  Import took 0.009941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.950906 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/package.json
+  artifactKey: Guid(fac9fb4ad804244e0911f21e340a3d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/package.json using Guid(fac9fb4ad804244e0911f21e340a3d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e293000a265caca32869665f244d35ae') in 0.002319 seconds 
+  Import took 0.004639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.474851 seconds.
+  path: Packages/com.unity.xr.core-utils/package.json
+  artifactKey: Guid(4caaaba15559d47f7b3f773241c999af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.core-utils/package.json using Guid(4caaaba15559d47f7b3f773241c999af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f76f615830358a8346f63c16e6aa10e') in 0.002005 seconds 
+  Import took 0.004039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.876019 seconds.
+  path: Packages/com.unity.xr.legacyinputhelpers/package.json
+  artifactKey: Guid(d16ab7e2b2998ad4c9729d86bb9aa666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.legacyinputhelpers/package.json using Guid(d16ab7e2b2998ad4c9729d86bb9aa666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e3fb1d3403c158588004e3e74b60e37b') in 0.001961 seconds 
+  Import took 0.004039 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.432696 seconds.
+  path: Packages/com.unity.ide.visualstudio/package.json
+  artifactKey: Guid(656f74f6edaa396458412b9e3903d8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ide.visualstudio/package.json using Guid(656f74f6edaa396458412b9e3903d8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32caba3e38529b99f1ecfc90593e6e5b') in 0.001860 seconds 
+  Import took 0.004109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.424802 seconds.
+  path: Packages/com.unity.collab-proxy/package.json
+  artifactKey: Guid(743fda8c4b219c8429fb5a77ede1c879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.collab-proxy/package.json using Guid(743fda8c4b219c8429fb5a77ede1c879) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22711bbe2ecf9b7a08a2aa13e19b453b') in 0.001901 seconds 
+  Import took 0.004124 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.991775 seconds.
+  path: Packages/com.unity.ugui/package.json
+  artifactKey: Guid(319b8889f363f5947acf209c17a94149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ugui/package.json using Guid(319b8889f363f5947acf209c17a94149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39d1f12f0f4420a8b9dea50868bbb5d0') in 0.003170 seconds 
+  Import took 0.005241 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.550300 seconds.
+  path: Packages/com.unity.xr.openxr/package.json
+  artifactKey: Guid(763acfe7f0d8c4ac9a7bc96e08f0face) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.openxr/package.json using Guid(763acfe7f0d8c4ac9a7bc96e08f0face) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40a25afc8e485ec9d061990b8bd96e88') in 0.002265 seconds 
+  Import took 0.004464 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.393417 seconds.
+  path: Packages/com.unity.nuget.newtonsoft-json/package.json
+  artifactKey: Guid(f8d4e5c2f2df25449ae8c391afbe5114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.nuget.newtonsoft-json/package.json using Guid(f8d4e5c2f2df25449ae8c391afbe5114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3887d1616531507fa9c4f23ac1ba7ce0') in 0.002018 seconds 
+  Import took 0.004104 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.700957 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor
+  artifactKey: Guid(08757b89960994492baa89d8001801e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor using Guid(08757b89960994492baa89d8001801e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e7cec624eda9e55a5d1c6ba8277a67d') in 0.002032 seconds 
+  Import took 0.004438 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000416 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor
+  artifactKey: Guid(08757b89960994492baa89d8001801e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor using Guid(08757b89960994492baa89d8001801e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e7cec624eda9e55a5d1c6ba8277a67d') in 0.001528 seconds 
+  Import took 0.003608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.056216 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Unity.XR.Interaction.Toolkit.Editor.asmdef
+  artifactKey: Guid(190979c3ed6e41c448f5e9925429edf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Unity.XR.Interaction.Toolkit.Editor.asmdef using Guid(190979c3ed6e41c448f5e9925429edf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fb4e67c5a65b3bbf5848f5088763774') in 0.001778 seconds 
+  Import took 0.003916 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.958142 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/XR
+  artifactKey: Guid(04ae37a6c4a63a249b01e86bac1b68b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/XR using Guid(04ae37a6c4a63a249b01e86bac1b68b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05893a9e57d11ffa9f9b9a012eaa2f9e') in 0.001981 seconds 
+  Import took 0.004954 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.528233 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime
+  artifactKey: Guid(be48be1b1a8d842c5b1a7f0dc9a13977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime using Guid(be48be1b1a8d842c5b1a7f0dc9a13977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9989681572eb0aefac92feb90803d33') in 0.001932 seconds 
+  Import took 0.004038 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.077136 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Unity.XR.Interaction.Toolkit.asmdef
+  artifactKey: Guid(fe685ec1767f73d42b749ea8045bfe43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Unity.XR.Interaction.Toolkit.asmdef using Guid(fe685ec1767f73d42b749ea8045bfe43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e95848d5d886b8c6da3fd12a3bc642b0') in 0.002286 seconds 
+  Import took 0.004458 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.616209 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Inputs
+  artifactKey: Guid(f85c3d1676454104d994f2220862ec0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Inputs using Guid(f85c3d1676454104d994f2220862ec0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e928f63f377b10a516f038468ffb70be') in 0.001977 seconds 
+  Import took 0.003974 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.150803 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation
+  artifactKey: Guid(0bfc4b39367422d4eb1e7f645ed3de9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation using Guid(0bfc4b39367422d4eb1e7f645ed3de9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a363fdc7dd98d9974558986bf9f6b2d6') in 0.002161 seconds 
+  Import took 0.004151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.037472 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation/XRDeviceSimulatorSettingsEditor.cs
+  artifactKey: Guid(e00fa6b13a8c0ae4ab7b11b687c7dec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation/XRDeviceSimulatorSettingsEditor.cs using Guid(e00fa6b13a8c0ae4ab7b11b687c7dec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '141538ec4e8dc9310922cd469c665191') in 0.005046 seconds 
+  Import took 0.007315 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000441 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation/XRDeviceSimulatorSettingsEditor.cs
+  artifactKey: Guid(e00fa6b13a8c0ae4ab7b11b687c7dec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation/XRDeviceSimulatorSettingsEditor.cs using Guid(e00fa6b13a8c0ae4ab7b11b687c7dec4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '141538ec4e8dc9310922cd469c665191') in 0.001775 seconds 
+  Import took 0.003708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.909694 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation/XRDeviceSimulatorEditor.cs
+  artifactKey: Guid(bea2c7aeca21b1b4a9bd89a09f59b076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Inputs/Simulation/XRDeviceSimulatorEditor.cs using Guid(bea2c7aeca21b1b4a9bd89a09f59b076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df10100facd0bbf87c9ce10a755d88c') in 0.002055 seconds 
+  Import took 0.004108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.255308 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef
+  artifactKey: Guid(8f07e33567e0ee542b40769c456c6b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef using Guid(8f07e33567e0ee542b40769c456c6b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39a2750bd710480d54e4b433dc797373') in 0.002324 seconds 
+  Import took 0.004488 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001051 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef
+  artifactKey: Guid(8f07e33567e0ee542b40769c456c6b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef using Guid(8f07e33567e0ee542b40769c456c6b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39a2750bd710480d54e4b433dc797373') in 0.001680 seconds 
+  Import took 0.003596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.628303 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets
+  artifactKey: Guid(b4016809721968342b4b5e3256474dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.2/Starter Assets using Guid(b4016809721968342b4b5e3256474dec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '152b98e0bc153d6b14e18380b8fde086') in 0.002580 seconds 
+  Import took 0.004618 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003966 seconds.
+Registered in 0.003549 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.48 ms, found 7 plugins.
+Refreshing native plugins compatible for Editor in 0.40 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.482 seconds
+- Completed reload, in  0.575 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.46 ms, found 7 plugins.
+Refreshing native plugins compatible for Editor in 0.40 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1858 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.7 MB.
-System memory in use after: 79.8 MB.
+Unloading 2540 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 112.0 MB.
 
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2281.
-Total: 1.500600 ms (FindLiveObjects: 0.106000 ms CreateObjectMapping: 0.021700 ms MarkObjects: 1.353900 ms  DeleteObjects: 0.018100 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2995.
+Total: 1.308100 ms (FindLiveObjects: 0.122500 ms CreateObjectMapping: 0.030900 ms MarkObjects: 1.137500 ms  DeleteObjects: 0.016300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -151,22 +440,22 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003962 seconds.
+Registered in 0.004954 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.35 ms, found 7 plugins.
+Refreshing native plugins compatible for Editor in 0.46 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.415 seconds
+- Completed reload, in  0.637 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.45 ms, found 7 plugins.
+Refreshing native plugins compatible for Editor in 0.43 ms, found 7 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1853 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 79.7 MB.
-System memory in use after: 79.8 MB.
+Unloading 2540 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 111.8 MB.
+System memory in use after: 112.0 MB.
 
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2281.
-Total: 0.866800 ms (FindLiveObjects: 0.079700 ms CreateObjectMapping: 0.021800 ms MarkObjects: 0.749000 ms  DeleteObjects: 0.015300 ms)
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 2999.
+Total: 1.492000 ms (FindLiveObjects: 0.118500 ms CreateObjectMapping: 0.032800 ms MarkObjects: 1.305900 ms  DeleteObjects: 0.033600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
