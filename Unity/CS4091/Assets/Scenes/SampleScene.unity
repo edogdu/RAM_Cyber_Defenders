@@ -1670,7 +1670,7 @@ PrefabInstance:
     - target: {fileID: 2266475974714859876, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
       propertyPath: m_Name
-      value: Plain Card (2)
+      value: deck
       objectReference: {fileID: 0}
     - target: {fileID: 5896323030836868908, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
@@ -2143,7 +2143,7 @@ PrefabInstance:
     - target: {fileID: 2266475974714859876, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
       propertyPath: m_Name
-      value: Plain Card (3)
+      value: wasted
       objectReference: {fileID: 0}
     - target: {fileID: 5896323030836868908, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
