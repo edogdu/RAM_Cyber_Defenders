@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1940075678782771618}
   - component: {fileID: 6484836108906920848}
   - component: {fileID: 4959506340749232196}
+  - component: {fileID: 7315947636912425626}
   m_Layer: 0
   m_Name: R_Cyber_Attack
   m_TagString: Untagged
@@ -267,3 +268,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &7315947636912425626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206596546779395116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483f4520619d3804bbdd6bae0c83aff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

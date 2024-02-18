@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5398498344933389914}
   - component: {fileID: 7811876319883085366}
   - component: {fileID: 2530116572207521409}
+  - component: {fileID: -4836041360628076056}
   m_Layer: 0
   m_Name: G_Encryption
   m_TagString: Untagged
@@ -267,3 +268,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &-4836041360628076056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2678385331625210795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483f4520619d3804bbdd6bae0c83aff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

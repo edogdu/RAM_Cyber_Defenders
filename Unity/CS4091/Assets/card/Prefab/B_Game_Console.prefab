@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3165343875224849483}
   - component: {fileID: 4197770009769556417}
   - component: {fileID: 1066211604777744968}
+  - component: {fileID: 4992558545717775304}
   m_Layer: 0
   m_Name: B_Game_Console
   m_TagString: Untagged
@@ -267,3 +268,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &4992558545717775304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5118287117120721741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483f4520619d3804bbdd6bae0c83aff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

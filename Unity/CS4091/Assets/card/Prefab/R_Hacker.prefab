@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3373554043391589355}
   - component: {fileID: 7761467155258527629}
   - component: {fileID: 5895847251744261988}
+  - component: {fileID: -8603988756039401415}
   m_Layer: 0
   m_Name: R_Hacker
   m_TagString: Untagged
@@ -267,3 +268,15 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &-8603988756039401415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481333466459878976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483f4520619d3804bbdd6bae0c83aff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

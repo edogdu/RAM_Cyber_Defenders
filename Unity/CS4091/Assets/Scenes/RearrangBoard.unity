@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 208213250}
   m_Layer: 0
   m_Name: Left Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1519,10 +1519,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1807880016}
     m_Modifications:
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_TrackScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_TrackPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2266475974714859876, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
       propertyPath: m_Name
-      value: deck
+      value: DeckManager
       objectReference: {fileID: 0}
     - target: {fileID: 5896323030836868908, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
@@ -1584,11 +1614,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7176014460950045698, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7303666705817623186, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fb8484d3793347847bb92627c3df735f, type: 2}
+    - target: {fileID: 8081688266287818202, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfd0cc98bd110cc47b79970b9692ef10, type: 3}
 --- !u!1001 &702319775
@@ -2023,6 +2063,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1807880016}
     m_Modifications:
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_TrackScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_TrackPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
+        type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2266475974714859876, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
       propertyPath: m_Name
@@ -2195,7 +2260,7 @@ GameObject:
   - component: {fileID: 1129274679}
   m_Layer: 0
   m_Name: Right Controller
-  m_TagString: Untagged
+  m_TagString: Hand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3432,7 +3497,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -3868,6 +3933,32 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 680235771}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564654435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564654426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef9f7373054ae94bbcbe7dccfbca1eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefabs:
+  - {fileID: 1394939644803993732, guid: 2290636e04d1a3d45a0361e2ca1a0873, type: 3}
+  - {fileID: 6102488143884081530, guid: 023d9a634d9b62a41b85373d27b6ea96, type: 3}
+  - {fileID: 5118287117120721741, guid: ea9026eb5a64be6449c700f884a9e66f, type: 3}
+  - {fileID: 6155043510907443162, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
+  - {fileID: 186350968724175869, guid: 5c473d21e08780b4c8a97e4927f847da, type: 3}
+  - {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
+  - {fileID: 7687779438024195022, guid: efbdc2428039c774c99163de5cc387a5, type: 3}
+  - {fileID: 206596546779395116, guid: f1dd3e8b71805b24ea0819536d925486, type: 3}
+  - {fileID: 1718026334550839205, guid: 26cf9f662b0ad684aa8a4a496f4686b7, type: 3}
+  - {fileID: 4481333466459878976, guid: d29d8c82edec33d44b296b53c906506f, type: 3}
+  - {fileID: 8199597340460048837, guid: 7307066d804d31b4b9c1990fdc267d2e, type: 3}
+  - {fileID: 2974886034097226911, guid: 3614538f3223c324a8a85c000f1a7612, type: 3}
+  - {fileID: 9095571275517753176, guid: a858993d4477b5e419a3c3b74f22a502, type: 3}
 --- !u!1001 &1688309736
 PrefabInstance:
   m_ObjectHideFlags: 0
