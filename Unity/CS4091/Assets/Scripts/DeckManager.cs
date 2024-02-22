@@ -9,6 +9,10 @@ public class DeckManager : MonoBehaviour
     private Vector3 initialDrawnCardPosition;
     private GameManager gameManager;
 
+    public List<GameObject> reorrderDeck;
+
+    public int turnNumber = 0;
+
     void Start()
     {
         // Find the GameManager in the scene
@@ -26,6 +30,14 @@ public class DeckManager : MonoBehaviour
     void InitializeDeck()
     {
         deck.AddRange(cardPrefabs);
+
+        for (int i = 0; i < 13; i++)
+        {
+            int randomNum = Random.Range(0, 12 - i);
+
+            reorrderDeck.Add(deck[randomNum]);
+            deck.Remove(deck[randomNum]);
+        }
     }
 
     public GameObject DrawCard()
@@ -36,8 +48,8 @@ public class DeckManager : MonoBehaviour
             return null;
         }
 
-        GameObject drawnCardPrefab = deck[0];
-        deck.RemoveAt(0);
+        GameObject drawnCardPrefab = reorrderDeck[0];
+        reorrderDeck.RemoveAt(0);
 
         // Instantiate the drawn card prefab on top of the deck
         currentDrawnCard = Instantiate(drawnCardPrefab, transform.position + Vector3.up, transform.rotation);
@@ -57,6 +69,10 @@ public class DeckManager : MonoBehaviour
             DrawCard();
         }
         //if a turn end, draw a new card
-
+        //placing the card on the board is considered to be the end of the turn
+        if (currentDrawnCard.transform.position.z < 0.44 && currentDrawnCard.transform.position.z > -0.50)
+            if (currentDrawnCard.transform.position.x < 0.30 && currentDrawnCard.transform.position.x > -0.40)
+                if (currentDrawnCard.transform.position.y < 0.83 && currentDrawnCard.transform.position.z > 0.80)
+                    turnNumber++;
     }
 }
