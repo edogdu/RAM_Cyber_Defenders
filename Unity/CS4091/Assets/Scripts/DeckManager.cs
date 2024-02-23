@@ -31,18 +31,22 @@ public class DeckManager : MonoBehaviour
     {
         deck.AddRange(cardPrefabs);
 
-        for (int i = 0; i < 13; i++)
+        for (int i = 0; i < deck.Count - 1; i++)
         {
-            int randomNum = Random.Range(0, 12 - i);
+            int randomNum = Random.Range(i, deck.Count);
 
-            reorrderDeck.Add(deck[randomNum]);
-            deck.Remove(deck[randomNum]);
+            // Swap the cards at positions i and randomNum
+            GameObject temp = deck[i];
+            deck[i] = deck[randomNum];
+            deck[randomNum] = temp;
         }
+
+        reorrderDeck.AddRange(deck);
     }
 
-    public GameObject DrawCard()
+        public GameObject DrawCard()
     {
-        if (deck.Count == 0)
+        if (reorrderDeck.Count == 0)
         {
             Debug.LogWarning("Deck is empty!");
             return null;
@@ -62,17 +66,28 @@ public class DeckManager : MonoBehaviour
 
     void Update()
     {
-        if (gameManager != null && Vector3.Distance(currentDrawnCard.transform.position, new Vector3(-1.98065519f, 1.43019998f, 0.378646255f)) > 2f)
+        if (gameManager != null && Vector3.Distance(currentDrawnCard.transform.position, new Vector3(-1.58700001f, 1.43499994f, -1.31700003f)) > 2f)
         {
             // Now you can access public functions or variables of the GameManager
             gameManager.increaseTurn();
             DrawCard();
         }
-        //if a turn end, draw a new card
+
+        //if a turn ends, draw a new card
         //placing the card on the board is considered to be the end of the turn
-        if (currentDrawnCard.transform.position.z < 0.44 && currentDrawnCard.transform.position.z > -0.50)
-            if (currentDrawnCard.transform.position.x < 0.30 && currentDrawnCard.transform.position.x > -0.40)
-                if (currentDrawnCard.transform.position.y < 0.83 && currentDrawnCard.transform.position.z > 0.80)
-                    turnNumber++;
+        if (
+            currentDrawnCard.transform.position.z < 0.44 && currentDrawnCard.transform.position.z > -0.50 &&
+            currentDrawnCard.transform.position.x < 0.30 && currentDrawnCard.transform.position.x > -0.40 &&
+            currentDrawnCard.transform.position.y < 0.83 && currentDrawnCard.transform.position.y > 0.80
+        )
+        {
+            turnNumber++;
+        }
     }
+
+    public int ReorderDeckCount
+    {
+        get { return reorrderDeck.Count; }
+    }
+
 }

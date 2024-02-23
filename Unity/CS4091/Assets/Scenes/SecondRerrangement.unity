@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17709881, g: 0.22169928, b: 0.30396205, a: 1}
+  m_IndirectSpecularColor: {r: 0.17709908, g: 0.22169966, b: 0.30396232, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2381,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 923703426756431517, guid: bfd0cc98bd110cc47b79970b9692ef10,
         type: 3}
@@ -3815,7 +3815,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -4244,6 +4244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardDecktext: {fileID: 1204763132}
+  deckManager: {fileID: 0}
   numbersOfCards: 50
 --- !u!4 &1564654434 stripped
 Transform:
@@ -4264,19 +4265,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardPrefabs:
-  - {fileID: 1394939644803993732, guid: 2290636e04d1a3d45a0361e2ca1a0873, type: 3}
-  - {fileID: 6102488143884081530, guid: 023d9a634d9b62a41b85373d27b6ea96, type: 3}
   - {fileID: 5118287117120721741, guid: ea9026eb5a64be6449c700f884a9e66f, type: 3}
-  - {fileID: 6155043510907443162, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
-  - {fileID: 186350968724175869, guid: 5c473d21e08780b4c8a97e4927f847da, type: 3}
-  - {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
-  - {fileID: 7687779438024195022, guid: efbdc2428039c774c99163de5cc387a5, type: 3}
-  - {fileID: 206596546779395116, guid: f1dd3e8b71805b24ea0819536d925486, type: 3}
-  - {fileID: 1718026334550839205, guid: 26cf9f662b0ad684aa8a4a496f4686b7, type: 3}
-  - {fileID: 4481333466459878976, guid: d29d8c82edec33d44b296b53c906506f, type: 3}
-  - {fileID: 8199597340460048837, guid: 7307066d804d31b4b9c1990fdc267d2e, type: 3}
-  - {fileID: 2974886034097226911, guid: 3614538f3223c324a8a85c000f1a7612, type: 3}
+  - {fileID: 5118287117120721741, guid: ea9026eb5a64be6449c700f884a9e66f, type: 3}
+  - {fileID: 5118287117120721741, guid: ea9026eb5a64be6449c700f884a9e66f, type: 3}
+  - {fileID: 5118287117120721741, guid: ea9026eb5a64be6449c700f884a9e66f, type: 3}
+  - {fileID: 6102488143884081530, guid: 023d9a634d9b62a41b85373d27b6ea96, type: 3}
+  - {fileID: 6102488143884081530, guid: 023d9a634d9b62a41b85373d27b6ea96, type: 3}
+  - {fileID: 6102488143884081530, guid: 023d9a634d9b62a41b85373d27b6ea96, type: 3}
+  - {fileID: 6102488143884081530, guid: 023d9a634d9b62a41b85373d27b6ea96, type: 3}
+  - {fileID: 1394939644803993732, guid: 2290636e04d1a3d45a0361e2ca1a0873, type: 3}
+  - {fileID: 1394939644803993732, guid: 2290636e04d1a3d45a0361e2ca1a0873, type: 3}
+  - {fileID: 1394939644803993732, guid: 2290636e04d1a3d45a0361e2ca1a0873, type: 3}
+  - {fileID: 1394939644803993732, guid: 2290636e04d1a3d45a0361e2ca1a0873, type: 3}
   - {fileID: 9095571275517753176, guid: a858993d4477b5e419a3c3b74f22a502, type: 3}
+  - {fileID: 9095571275517753176, guid: a858993d4477b5e419a3c3b74f22a502, type: 3}
+  - {fileID: 9095571275517753176, guid: a858993d4477b5e419a3c3b74f22a502, type: 3}
+  - {fileID: 9095571275517753176, guid: a858993d4477b5e419a3c3b74f22a502, type: 3}
+  - {fileID: 6155043510907443162, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
+  - {fileID: 6155043510907443162, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
+  - {fileID: 6155043510907443162, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
+  - {fileID: 6155043510907443162, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
+  - {fileID: 7687779438024195022, guid: efbdc2428039c774c99163de5cc387a5, type: 3}
+  - {fileID: 7687779438024195022, guid: efbdc2428039c774c99163de5cc387a5, type: 3}
+  - {fileID: 7687779438024195022, guid: efbdc2428039c774c99163de5cc387a5, type: 3}
+  - {fileID: 7687779438024195022, guid: efbdc2428039c774c99163de5cc387a5, type: 3}
+  - {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
+  - {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
+  - {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
+  - {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
+  - {fileID: 186350968724175869, guid: 5c473d21e08780b4c8a97e4927f847da, type: 3}
+  - {fileID: 186350968724175869, guid: 5c473d21e08780b4c8a97e4927f847da, type: 3}
+  - {fileID: 186350968724175869, guid: 5c473d21e08780b4c8a97e4927f847da, type: 3}
+  - {fileID: 186350968724175869, guid: 5c473d21e08780b4c8a97e4927f847da, type: 3}
+  - {fileID: 8199597340460048837, guid: 7307066d804d31b4b9c1990fdc267d2e, type: 3}
+  - {fileID: 8199597340460048837, guid: 7307066d804d31b4b9c1990fdc267d2e, type: 3}
+  - {fileID: 8199597340460048837, guid: 7307066d804d31b4b9c1990fdc267d2e, type: 3}
+  - {fileID: 8199597340460048837, guid: 7307066d804d31b4b9c1990fdc267d2e, type: 3}
+  - {fileID: 4481333466459878976, guid: d29d8c82edec33d44b296b53c906506f, type: 3}
+  - {fileID: 4481333466459878976, guid: d29d8c82edec33d44b296b53c906506f, type: 3}
+  - {fileID: 4481333466459878976, guid: d29d8c82edec33d44b296b53c906506f, type: 3}
+  - {fileID: 4481333466459878976, guid: d29d8c82edec33d44b296b53c906506f, type: 3}
+  - {fileID: 2974886034097226911, guid: 3614538f3223c324a8a85c000f1a7612, type: 3}
+  - {fileID: 2974886034097226911, guid: 3614538f3223c324a8a85c000f1a7612, type: 3}
+  - {fileID: 2974886034097226911, guid: 3614538f3223c324a8a85c000f1a7612, type: 3}
+  - {fileID: 2974886034097226911, guid: 3614538f3223c324a8a85c000f1a7612, type: 3}
+  - {fileID: 1718026334550839205, guid: 26cf9f662b0ad684aa8a4a496f4686b7, type: 3}
+  - {fileID: 1718026334550839205, guid: 26cf9f662b0ad684aa8a4a496f4686b7, type: 3}
+  - {fileID: 1718026334550839205, guid: 26cf9f662b0ad684aa8a4a496f4686b7, type: 3}
+  - {fileID: 1718026334550839205, guid: 26cf9f662b0ad684aa8a4a496f4686b7, type: 3}
+  - {fileID: 206596546779395116, guid: f1dd3e8b71805b24ea0819536d925486, type: 3}
+  - {fileID: 206596546779395116, guid: f1dd3e8b71805b24ea0819536d925486, type: 3}
   reorrderDeck: []
   turnNumber: 0
 --- !u!1001 &1636187554
