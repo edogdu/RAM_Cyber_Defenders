@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5400166662416190034}
   - component: {fileID: 3192082490364047071}
   - component: {fileID: 1198297054617114446}
-  - component: {fileID: -5047100750525829164}
+  - component: {fileID: 3791583863063634047}
   m_Layer: 0
   m_Name: B_Cell_Phone
   m_TagString: Untagged
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-5047100750525829164
+--- !u!114 &3791583863063634047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394939644803993732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483f4520619d3804bbdd6bae0c83aff1, type: 3}
+  m_Script: {fileID: 11500000, guid: eb15f411ed2635d4d981fd28a20cb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3824544721355591348
