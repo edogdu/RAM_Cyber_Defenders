@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7181838470650021897}
   m_Layer: 0
   m_Name: G_Education
-  m_TagString: Untagged
+  m_TagString: GreenCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 288
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1

@@ -15,17 +15,17 @@ MonoBehaviour:
   m_LayerNames:
   - Default
   - BlueCard
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - GreenCard
+  - RedCard
+  - Player1Blue
+  - Player1Green
+  - Player1Red
+  - Player2Blue
+  - Player2Green
+  - Player2Red
+  - Blue
+  - Green
+  - Red
   - 
   - 
   - 
