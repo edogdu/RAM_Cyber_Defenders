@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
-using CustomUnitySpace;
 
 public class DeckManager : MonoBehaviour
 {
     public List<GameObject> cardPrefabs;
-    // private List<GameObject> deck = new List<GameObject>();
+    private List<GameObject> deck = new List<GameObject>();
     private GameObject currentDrawnCard;
     private Vector3 initialDrawnCardPosition;
     private GameManager gameManager;
@@ -24,13 +23,12 @@ public class DeckManager : MonoBehaviour
             Debug.LogError("GameManager not found in the scene!");
         }
 
-        ShuffleCards shuffle = new ShuffleCards();
-        reorrderDeck = shuffle.InitializeDeck(cardPrefabs);
+        InitializeDeck();
 
         DrawCard();
     }
-
-    /*void InitializeDeck()
+    
+    void InitializeDeck()
     {
         deck.AddRange(cardPrefabs);
 
@@ -43,9 +41,9 @@ public class DeckManager : MonoBehaviour
             deck[i] = deck[randomNum];
             deck[randomNum] = temp;
         }
-
+        //
         reorrderDeck.AddRange(deck);
-    }*/ // -> moved to CustomLibrary
+    }
 
     public GameObject DrawCard()
     {
