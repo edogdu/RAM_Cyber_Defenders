@@ -15,8 +15,8 @@ MonoBehaviour:
   m_LayerNames:
   - Default
   - BlueCard
-  - 
-  - 
+  - Uninteractable
+  - interactable
   - 
   - 
   - 
