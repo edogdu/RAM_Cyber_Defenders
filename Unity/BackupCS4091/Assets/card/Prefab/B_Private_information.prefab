@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4760986035468976789}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 161408887867960630}
   - component: {fileID: 5242448660804499465}
   - component: {fileID: 1509253925350334117}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B_Private_information
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,6 +380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: House01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6848114324504525043, guid: bc57c0c1b1f075e4ca416f1570b5f0f3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6848114324504525043, guid: bc57c0c1b1f075e4ca416f1570b5f0f3,
         type: 3}

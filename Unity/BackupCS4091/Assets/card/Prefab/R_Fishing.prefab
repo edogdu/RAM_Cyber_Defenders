@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4461088254789258207}
   - component: {fileID: 5405236763366233819}
   - component: {fileID: 1344422282354921385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Fishing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 248697625539230406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6484836108906920848}
   - component: {fileID: 4959506340749232196}
   - component: {fileID: 7315947636912425626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Cyber_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4872956965125200035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

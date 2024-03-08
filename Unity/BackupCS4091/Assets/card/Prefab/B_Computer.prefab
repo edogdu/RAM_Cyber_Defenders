@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5378455414358100119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6102488143884081532}
   - component: {fileID: 7856725865758306280}
   - component: {fileID: 2333237829512062122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B_Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,6 +325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Laptop_black Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4079870257259986168, guid: c9fa78f3afafbff4d9ee2eaefec437e7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4079870257259986168, guid: c9fa78f3afafbff4d9ee2eaefec437e7,
         type: 3}

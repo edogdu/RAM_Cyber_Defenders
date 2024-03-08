@@ -18,7 +18,7 @@ public class CardInteraction : XRGrabInteractable
 
             // Check if the socket is occupied
             XRSocketCardHandler socket = socketInteractor.GetComponent<XRSocketCardHandler>();
-            if (socket != null && !socket.IsOccupied())
+            if (socket != null && !socket.IsOccupied() && gameObject.layer == socketInteractor.gameObject.layer)
             {
                 // Set the card's position and rotation to match the socket
                 this.transform.position = socketInteractor.transform.position;

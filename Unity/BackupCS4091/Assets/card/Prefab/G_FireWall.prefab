@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1000054942576271787}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 101220248709379764}
   - component: {fileID: 5336194029564786354}
   - component: {fileID: 5462270067599253467}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: G_FireWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1238401250425684476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4197770009769556417}
   - component: {fileID: 4992558545717775304}
   - component: {fileID: 8628502487798582331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B_Game_Console
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,6 +321,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5686397645528848569}
     m_Modifications:
+    - target: {fileID: 995819907234112879, guid: 53cedbbad47614049819635258a3d119,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3455564367349682571, guid: 53cedbbad47614049819635258a3d119,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -351,10 +356,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.2556
       objectReference: {fileID: 0}
+    - target: {fileID: 4731708878834114576, guid: 53cedbbad47614049819635258a3d119,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6052924558368637871, guid: 53cedbbad47614049819635258a3d119,
         type: 3}
       propertyPath: m_Name
       value: Consolegaming
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052924558368637871, guid: 53cedbbad47614049819635258a3d119,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6052924558368637871, guid: 53cedbbad47614049819635258a3d119,
         type: 3}
@@ -435,6 +450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.0672
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141152130047987659, guid: 53cedbbad47614049819635258a3d119,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53cedbbad47614049819635258a3d119, type: 3}

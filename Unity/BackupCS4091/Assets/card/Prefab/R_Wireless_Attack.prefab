@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3185945460835703589}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 2974886034097226901}
   - component: {fileID: 2974886034097226900}
   - component: {fileID: 8993644314493122012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Wireless_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5400166662416190034}
   - component: {fileID: 3192082490364047071}
   - component: {fileID: 3791583863063634047}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: B_Cell_Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3540382250879315045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,6 +312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: phone2k
+      objectReference: {fileID: 0}
+    - target: {fileID: 4613868567129039504, guid: 72e9490c956b0e44da5138a6259f03b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4613868567129039504, guid: 72e9490c956b0e44da5138a6259f03b2,
         type: 3}

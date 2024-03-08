@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7811876319883085366}
   - component: {fileID: 2530116572207521409}
   - component: {fileID: -4836041360628076056}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: G_Encryption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1458565133820980650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
