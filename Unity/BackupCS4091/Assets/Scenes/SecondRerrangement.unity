@@ -167,7 +167,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &68203899
 PrefabInstance:
@@ -334,6 +334,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &98009295
 SphereCollider:
@@ -450,6 +453,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &147787224
 SphereCollider:
@@ -550,6 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: -5736529017746700592, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 365f8caa8dbc66d4d8b544463e33e49c, type: 3}
 --- !u!4 &189265448 stripped
 Transform:
@@ -653,6 +660,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &191323394
 SphereCollider:
@@ -680,7 +690,7 @@ GameObject:
   - component: {fileID: 204713419}
   m_Layer: 6
   m_Name: B_socket2
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -775,6 +785,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 569659400}
   RedSocket: {fileID: 1647151123}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &204713420
 SphereCollider:
@@ -1839,7 +1852,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 118.19299, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -2007,8 +2020,11 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  GreenSocket: {fileID: 0}
-  RedSocket: {fileID: 0}
+  GreenSocket: {fileID: 431477170}
+  RedSocket: {fileID: 1873655194}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &431477173
 SphereCollider:
@@ -2261,6 +2277,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &562345748
 SphereCollider:
@@ -2371,6 +2390,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &569659403
 SphereCollider:
@@ -3009,6 +3031,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &719658623
 SphereCollider:
@@ -3410,7 +3435,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &839875474
 GameObject:
@@ -3456,7 +3481,7 @@ GameObject:
   - component: {fileID: 848558266}
   m_Layer: 6
   m_Name: B_socket4
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3551,6 +3576,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 562345745}
   RedSocket: {fileID: 1965355271}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &848558267
 SphereCollider:
@@ -3744,7 +3772,7 @@ Transform:
   m_Children:
   - {fileID: 427456074}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 86, z: 0}
 --- !u!1 &1008974756
 GameObject:
@@ -3790,7 +3818,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1019439449 stripped
 Transform:
@@ -3894,6 +3922,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1020524089
 SphereCollider:
@@ -4146,7 +4177,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1071402869
 PrefabInstance:
@@ -5075,7 +5106,7 @@ GameObject:
   - component: {fileID: 1187549667}
   m_Layer: 6
   m_Name: B_socket1
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5183,6 +5214,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 431477170}
   RedSocket: {fileID: 1873655194}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!1 &1194325966
 GameObject:
@@ -5280,6 +5314,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1194325969
 SphereCollider:
@@ -5331,7 +5368,7 @@ Transform:
   - {fileID: 131747061}
   - {fileID: 1214941758}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204763131
 GameObject:
@@ -5806,6 +5843,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1276715358
 SphereCollider:
@@ -5820,6 +5860,75 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.018
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &1277596801
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2236194
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.80917454
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.51663303
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_Name
+      value: G_Encryption (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
 --- !u!4 &1285515167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3089033304470733316, guid: efbdc2428039c774c99163de5cc387a5,
@@ -5867,7 +5976,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
@@ -5962,6 +6071,75 @@ Transform:
   m_Father: {fileID: 562345746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!1001 &1370805350
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.29544663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.78420115
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6807114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561564017250944513, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678385331625210795, guid: 74f4cd54fa7f80d4aad036052ee15d9d,
+        type: 3}
+      propertyPath: m_Name
+      value: G_Encryption
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74f4cd54fa7f80d4aad036052ee15d9d, type: 3}
 --- !u!1 &1410507838
 GameObject:
   m_ObjectHideFlags: 0
@@ -6351,6 +6529,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1496298003
 SphereCollider:
@@ -6612,6 +6793,20 @@ MonoBehaviour:
   - {fileID: 206596546779395116, guid: f1dd3e8b71805b24ea0819536d925486, type: 3}
   reorrderDeck: []
   turnNumber: 0
+--- !u!114 &1564654442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564654426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7f44dc6ac98341b7c751066422409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezePosition: 1
+  freezeRotation: 1
 --- !u!1 &1577061668
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,7 +6964,7 @@ GameObject:
   - component: {fileID: 1600455145}
   m_Layer: 6
   m_Name: B_socket3
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6864,6 +7059,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 1496298000}
   RedSocket: {fileID: 1194325966}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &1600455146
 SphereCollider:
@@ -6889,6 +7087,7 @@ GameObject:
   - component: {fileID: 1615759383}
   - component: {fileID: 1615759385}
   - component: {fileID: 1615759384}
+  - component: {fileID: 1615759386}
   m_Layer: 6
   m_Name: wasteSocket
   m_TagString: Socket
@@ -6985,6 +7184,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1615759386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615759382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d7f44dc6ac98341b7c751066422409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  freezePosition: 1
+  freezeRotation: 1
 --- !u!1 &1647151123
 GameObject:
   m_ObjectHideFlags: 0
@@ -7081,6 +7294,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1647151126
 SphereCollider:
@@ -7319,7 +7535,7 @@ Transform:
   - {fileID: 766554270}
   - {fileID: 1019439449}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1810280443 stripped
 Transform:
@@ -7371,7 +7587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1821335688 stripped
 Transform:
@@ -7481,6 +7697,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1845497442
 SphereCollider:
@@ -7591,6 +7810,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1873655197
 SphereCollider:
@@ -7693,7 +7915,7 @@ GameObject:
   - component: {fileID: 1954865175}
   m_Layer: 6
   m_Name: B_socket7
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7788,6 +8010,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 98009292}
   RedSocket: {fileID: 1276715355}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &1954865176
 SphereCollider:
@@ -7898,6 +8123,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &1965355274
 SphereCollider:
@@ -7925,7 +8153,7 @@ GameObject:
   - component: {fileID: 2006994522}
   m_Layer: 6
   m_Name: B_socket8
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8020,6 +8248,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 1020524086}
   RedSocket: {fileID: 1845497439}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &2006994523
 SphereCollider:
@@ -8083,147 +8314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb15f411ed2635d4d981fd28a20cb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_InteractionLayers:
-    m_Bits: 72
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_OnFirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnLastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnActivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnDeactivate:
-    m_PersistentCalls:
-      m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
-  m_TrackScale: 1
-  m_SmoothScale: 0
-  m_SmoothScaleAmount: 8
-  m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
-  hiddenModel: {fileID: 0}
 --- !u!1 &2035273818
 GameObject:
   m_ObjectHideFlags: 0
@@ -8237,7 +8327,7 @@ GameObject:
   - component: {fileID: 2035273820}
   m_Layer: 6
   m_Name: B_socket6
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8332,6 +8422,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 147787221}
   RedSocket: {fileID: 719658620}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &2035273821
 SphereCollider:
@@ -8433,7 +8526,7 @@ GameObject:
   - component: {fileID: 2098280833}
   m_Layer: 6
   m_Name: B_socket5
-  m_TagString: Socket
+  m_TagString: BlueSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8528,6 +8621,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 191323391}
   RedSocket: {fileID: 2136154369}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 0
 --- !u!135 &2098280834
 SphereCollider:
@@ -8638,6 +8734,9 @@ MonoBehaviour:
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   GreenSocket: {fileID: 0}
   RedSocket: {fileID: 0}
+  BlueparentNameToCheck: B_sockets
+  GreenparentNameToCheck: G_sockets
+  RedparentNameToCheck: G_sockets
   doFilterByType: 1
 --- !u!135 &2136154372
 SphereCollider:

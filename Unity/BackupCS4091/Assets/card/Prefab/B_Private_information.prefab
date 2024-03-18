@@ -44,11 +44,12 @@ GameObject:
   - component: {fileID: 6000829153605128049}
   - component: {fileID: 6414775909521445479}
   - component: {fileID: 161408887867960630}
-  - component: {fileID: 1509253925350334117}
   - component: {fileID: -2559409369405863452}
+  - component: {fileID: 7950947833937018578}
+  - component: {fileID: 6602048441207000237}
   m_Layer: 6
   m_Name: B_Private_information
-  m_TagString: Untagged
+  m_TagString: BlueCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +150,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &1509253925350334117
+--- !u!114 &-2559409369405863452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +159,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 9095571275517753176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb15f411ed2635d4d981fd28a20cb525, type: 3}
+  m_Script: {fileID: 11500000, guid: d8944bb6532124540bc9ac82983c553e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbol: 4
+  color: 1
+--- !u!114 &7950947833937018578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9095571275517753176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef12dd41a052054091a5fe3e840f9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -253,9 +268,9 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 4760986035468976789}
   m_SecondaryAttachTransform: {fileID: 4760986035468976789}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
+  m_MatchAttachRotation: 0
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
@@ -269,7 +284,7 @@ MonoBehaviour:
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 0
-  m_SmoothRotation: 1
+  m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -302,7 +317,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   hiddenModel: {fileID: 7656114099109540833}
---- !u!114 &-2559409369405863452
+--- !u!114 &6602048441207000237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,11 +326,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9095571275517753176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8944bb6532124540bc9ac82983c553e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a642b5420c627a4a951fc3dc0ea1f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  symbol: 4
-  color: 1
 --- !u!1001 &3834419827201772306
 PrefabInstance:
   m_ObjectHideFlags: 0

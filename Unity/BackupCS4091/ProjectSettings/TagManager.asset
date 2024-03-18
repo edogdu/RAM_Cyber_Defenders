@@ -7,6 +7,9 @@ TagManager:
   - Hand
   - Socket
   - Unuseable
+  - BlueCard
+  - BlueSocket
+  - wasteSocket
   layers:
   - Default
   - TransparentFX

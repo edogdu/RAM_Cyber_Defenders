@@ -13,11 +13,12 @@ GameObject:
   - component: {fileID: 4249690742010065464}
   - component: {fileID: 5400166662416190034}
   - component: {fileID: 3192082490364047071}
-  - component: {fileID: 3791583863063634047}
   - component: {fileID: 4878926362084888443}
+  - component: {fileID: 6139525128207242676}
+  - component: {fileID: -239720895773390297}
   m_Layer: 6
   m_Name: B_Cell_Phone
-  m_TagString: Untagged
+  m_TagString: BlueCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +119,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &3791583863063634047
+--- !u!114 &4878926362084888443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +128,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394939644803993732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb15f411ed2635d4d981fd28a20cb525, type: 3}
+  m_Script: {fileID: 11500000, guid: d8944bb6532124540bc9ac82983c553e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbol: 1
+  color: 1
+--- !u!114 &6139525128207242676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394939644803993732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aef12dd41a052054091a5fe3e840f9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -222,9 +237,9 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 3540382250879315045}
   m_SecondaryAttachTransform: {fileID: 3540382250879315045}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
+  m_MatchAttachRotation: 0
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
@@ -271,7 +286,7 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   hiddenModel: {fileID: 1108418737864149587}
---- !u!114 &4878926362084888443
+--- !u!114 &-239720895773390297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,11 +295,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1394939644803993732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8944bb6532124540bc9ac82983c553e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a642b5420c627a4a951fc3dc0ea1f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  symbol: 1
-  color: 1
 --- !u!1 &3824544721355591348
 GameObject:
   m_ObjectHideFlags: 0

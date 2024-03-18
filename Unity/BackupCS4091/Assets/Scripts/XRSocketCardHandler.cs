@@ -6,23 +6,31 @@ public class XRSocketCardHandler : XRSocketInteractor
     [SerializeField] private GameObject GreenSocket;
     [SerializeField] private GameObject RedSocket;
     private DeckManager deckManager;
+    public string BlueparentNameToCheck = "B_sockets";
+    //maybe green
+    public string GreenparentNameToCheck = "G_sockets";
+    //maybe red
+    public string RedparentNameToCheck = "R_sockets";
     private XRSocketCardHandler greenSocketHandler;
     private XRSocketCardHandler redSocketHandler;
     private bool isOccupied = false;
-    private int WhatTypeSocket = 0;
+    private int WhatSymbolSocket = 0;
     [SerializeField] protected bool doFilterByType = true;
 
     protected override void Start()
     {
         greenSocketHandler = GreenSocket.GetComponent<XRSocketCardHandler>();
         redSocketHandler = RedSocket.GetComponent<XRSocketCardHandler>();
+
         deckManager = FindObjectOfType<DeckManager>();
     }
-
+    /*
     void Update()
     {
         // Your Update logic here
     }
+    */
+    /*
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
         base.OnHoverEntered(args);
@@ -39,7 +47,7 @@ public class XRSocketCardHandler : XRSocketInteractor
         base.OnHoverExited(args);
         // Your logic for when an object exits the hover state goes here
     }
-
+    */
     public bool IsOccupied()
     {
         return isOccupied;
@@ -68,9 +76,9 @@ public class XRSocketCardHandler : XRSocketInteractor
             RedSocket.SetActive(false);
     }
 
-    public void SetCardType(int TypeInt)
+    public void SetCardType(int TypeInt)//1 for wifi 2 for...
     {
-        WhatTypeSocket = TypeInt;
+        WhatSymbolSocket = TypeInt;
 
         if (greenSocketHandler != null)
         {
@@ -78,7 +86,7 @@ public class XRSocketCardHandler : XRSocketInteractor
         }
         else
         {
-            Debug.LogWarning("XRSocketCardHandler component not found on GreenSocket!");
+            //Debug.LogWarning("XRSocketCardHandler component not found on GreenSocket!");
         }
 
         if (redSocketHandler != null)
@@ -87,13 +95,13 @@ public class XRSocketCardHandler : XRSocketInteractor
         }
         else
         {
-            Debug.LogWarning("XRSocketCardHandler component not found on RedSocket!");
+            //Debug.LogWarning("XRSocketCardHandler component not found on RedSocket!");
         }
     }
 
     public int GetCardType()
     {
-        return WhatTypeSocket;
+        return WhatSymbolSocket;
     }
 
     public GameObject GetGreenSocket()
@@ -111,10 +119,10 @@ public class XRSocketCardHandler : XRSocketInteractor
         if (doFilterByType && interactable is MonoBehaviour interactableMonoBehaviour)
         {
             CardsInformation cardInfo = interactableMonoBehaviour.GetComponent<CardsInformation>();
-            if (cardInfo != null)
+            if (cardInfo != null && (transform.parent.name == GreenparentNameToCheck || transform.parent.name == RedparentNameToCheck))
             {
                 // Check if the card type matches the expected type
-                return cardInfo.GetSymbol() == WhatTypeSocket;
+                return cardInfo.GetSymbol() == WhatSymbolSocket; // return true or false
             }
         }
         return base.CanHover(interactable);
@@ -125,10 +133,14 @@ public class XRSocketCardHandler : XRSocketInteractor
         if (doFilterByType && interactable is MonoBehaviour interactableMonoBehaviour)
         {
             CardsInformation cardInfo = interactableMonoBehaviour.GetComponent<CardsInformation>();
-            if (cardInfo != null)
+            if (cardInfo != null && (transform.parent.name == GreenparentNameToCheck))
             {
-                // Check if the card type matches the expected type\
-                return cardInfo.GetSymbol() == WhatTypeSocket;
+                if (isOccupied == false)
+                {
+                    // Check if the card type matches the expected type\
+                    SetOccupied(true);
+                    return cardInfo.GetSymbol() == WhatSymbolSocket;
+                }
             }
         }
         return base.CanSelect(interactable);
@@ -136,7 +148,7 @@ public class XRSocketCardHandler : XRSocketInteractor
 
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
-        deckManager.DrawCard();
+        //deckManager.DrawCard();
     }
 
 }
