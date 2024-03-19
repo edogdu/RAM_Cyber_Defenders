@@ -10,6 +10,8 @@ TagManager:
   - BlueCard
   - BlueSocket
   - wasteSocket
+  - GreenCard
+  - GreenSocket
   layers:
   - Default
   - TransparentFX
