@@ -13,7 +13,7 @@ public class XRSocketCardHandler : XRSocketInteractor
     public string RedparentNameToCheck = "R_sockets";
     private XRSocketCardHandler greenSocketHandler;
     private XRSocketCardHandler redSocketHandler;
-    private bool isOccupied = false;
+    [SerializeField] private bool isOccupied = false;
     private int WhatSymbolSocket = 0;
     [SerializeField] protected bool doFilterByType = true;
 
@@ -24,12 +24,20 @@ public class XRSocketCardHandler : XRSocketInteractor
 
         deckManager = FindObjectOfType<DeckManager>();
     }
-    /*
+
     void Update()
     {
         // Your Update logic here
+        if(isOccupied == true)
+        {
+            this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
+        }
+        else
+        {
+            this.interactionLayers = InteractionLayerMask.GetMask("Blue");
+        }
     }
-    */
+
     /*
     protected override void OnHoverEntered(HoverEnterEventArgs args)
     {
@@ -145,10 +153,21 @@ public class XRSocketCardHandler : XRSocketInteractor
         }
         return base.CanSelect(interactable);
     }
-
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
-        //deckManager.DrawCard();
+        base.OnSelectEntered(interactable);
+
+        // Subscribe to the selectExited event
+        interactable.selectExited.AddListener(OnSelectExited);
+    }
+
+    protected override void OnSelectExited(XRBaseInteractable interactable)
+    {
+        Debug.Log("Object detached from the socket.");
+        isOccupied = false;
+
+        // Unsubscribe from the selectExited event
+        interactable.selectExited.RemoveListener(OnSelectExited);
     }
 
 }

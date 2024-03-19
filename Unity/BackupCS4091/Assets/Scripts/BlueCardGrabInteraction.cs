@@ -43,7 +43,7 @@ public class BlueCardGrabInteraction : XRGrabInteractable
             greenSocketHandler = greenSocket.GetComponent<XRSocketCardHandler>();
             redSocketHandler = redSocket.GetComponent<XRSocketCardHandler>();
             */  
-            Debug.LogWarning("BlueCard");
+                Debug.LogWarning("BlueCard");
                 // Check if the socket is occupied
                 if (socket != null && socket.IsOccupied() == false && gameObject.layer == socketInteractor.gameObject.layer)
                 {
