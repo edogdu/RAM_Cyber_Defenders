@@ -15,11 +15,11 @@ MonoBehaviour:
   m_LayerNames:
   - Default
   - BlueCard
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Uninteractable
+  - interactable
+  - Blue
+  - Red
+  - Green
   - 
   - 
   - 

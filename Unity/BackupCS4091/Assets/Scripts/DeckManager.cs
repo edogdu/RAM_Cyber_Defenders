@@ -44,7 +44,7 @@ public class DeckManager : MonoBehaviour
         reorrderDeck.AddRange(deck);
     }
 
-        public GameObject DrawCard()
+    public GameObject DrawCard()
     {
         if (reorrderDeck.Count == 0)
         {
@@ -60,16 +60,23 @@ public class DeckManager : MonoBehaviour
         initialDrawnCardPosition = currentDrawnCard.transform.position;
 
         Debug.Log("Card drawn and instantiated on top of the deck!");
-
+        if(gameManager.decidedTurn == 1)
+        {
+            currentDrawnCard.GetComponent<CardsInformation>().SetPlayer(1);
+        }
+        else
+        {
+            currentDrawnCard.GetComponent<CardsInformation>().SetPlayer(2);
+        }
+        
         return currentDrawnCard;
     }
-
+    /*
     void Update()
     {
         if (gameManager != null && Vector3.Distance(currentDrawnCard.transform.position, new Vector3(-1.58700001f, 1.43499994f, -1.31700003f)) > 2f)
         {
             // Now you can access public functions or variables of the GameManager
-            gameManager.increaseTurn();
             DrawCard();
         }
 
@@ -84,6 +91,7 @@ public class DeckManager : MonoBehaviour
             turnNumber++;
         }
     }
+    */
 
     public int ReorderDeckCount
     {

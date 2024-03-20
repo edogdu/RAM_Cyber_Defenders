@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Hand
   - Socket
+  - Unuseable
+  - BlueCard
+  - BlueSocket
+  - wasteSocket
+  - GreenCard
+  - GreenSocket
   layers:
   - Default
   - TransparentFX
@@ -13,9 +19,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Blue
+  - Green
+  - Red
   - 
   - 
   - 

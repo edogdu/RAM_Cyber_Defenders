@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6911879007520776874}
   - component: {fileID: 507058789964769647}
   - component: {fileID: 8076989769590359036}
-  - component: {fileID: 1935005531462720226}
-  - component: {fileID: 7181838470650021897}
-  m_Layer: 0
+  - component: {fileID: -3985876147835378864}
+  - component: {fileID: 5002115602116737588}
+  m_Layer: 7
   m_Name: G_Education
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &1935005531462720226
+--- !u!114 &-3985876147835378864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 186350968724175869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: d8944bb6532124540bc9ac82983c553e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  symbol: 4
+  color: 2
+--- !u!114 &5002115602116737588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186350968724175869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22d7d138f25518458a08004733a65c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -135,7 +149,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 72
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -219,7 +233,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 5631463271011624336}
+  m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
@@ -236,8 +250,8 @@ MonoBehaviour:
   m_SmoothPosition: 1
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
-  m_TrackRotation: 1
-  m_SmoothRotation: 1
+  m_TrackRotation: 0
+  m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
   m_TrackScale: 1
@@ -269,18 +283,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &7181838470650021897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186350968724175869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483f4520619d3804bbdd6bae0c83aff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  hiddenModel: {fileID: 0}
 --- !u!1 &616629188410974276
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5631463271011624336}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
