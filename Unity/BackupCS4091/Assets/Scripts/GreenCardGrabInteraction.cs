@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -47,6 +48,7 @@ public class GreenCardGrabInteraction : XRGrabInteractable
             // Check if the socket is occupied
             if (socket != null && socket.IsOccupied() == false && socket.GetCardType() == cardInfo.GetSymbol() && gameObject.layer == socketInteractor.gameObject.layer)
             {
+                Debug.LogWarning("Green Card Placed");
                 // Set the card's position and rotation to match the socket
                 this.transform.position = socketInteractor.transform.position;
                 this.transform.rotation = Quaternion.Euler(0f, 270f, 0f);

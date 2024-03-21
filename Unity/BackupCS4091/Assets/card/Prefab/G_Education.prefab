@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 8076989769590359036}
   - component: {fileID: -3985876147835378864}
   - component: {fileID: 5002115602116737588}
+  - component: {fileID: 3195669121766504759}
   m_Layer: 7
   m_Name: G_Education
-  m_TagString: Untagged
+  m_TagString: GreenCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,6 +285,18 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   hiddenModel: {fileID: 0}
+--- !u!114 &3195669121766504759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186350968724175869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a642b5420c627a4a951fc3dc0ea1f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &616629188410974276
 GameObject:
   m_ObjectHideFlags: 0

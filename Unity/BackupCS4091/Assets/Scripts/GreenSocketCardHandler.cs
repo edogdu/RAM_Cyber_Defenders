@@ -1,5 +1,6 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
+using System;
 
 public class GreenSocketCardHandler : XRSocketInteractor
 {
@@ -72,6 +73,7 @@ public class GreenSocketCardHandler : XRSocketInteractor
         }
         return base.CanSelect(interactable);
     }
+    [Obsolete]
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
         base.OnSelectEntered(interactable);
@@ -86,7 +88,7 @@ public class GreenSocketCardHandler : XRSocketInteractor
             }
         }
     }
-
+    [Obsolete]
     protected override void OnSelectExited(XRBaseInteractable interactable)
     {
         base.OnSelectExited(interactable);

@@ -46,9 +46,10 @@ GameObject:
   - component: {fileID: 101220248709379764}
   - component: {fileID: -7096461335268448400}
   - component: {fileID: 841551513654789082}
+  - component: {fileID: -2122168486139656824}
   m_Layer: 7
   m_Name: G_FireWall
-  m_TagString: Untagged
+  m_TagString: GreenCard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,3 +316,15 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   hiddenModel: {fileID: 0}
+--- !u!114 &-2122168486139656824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7687779438024195022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a642b5420c627a4a951fc3dc0ea1f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

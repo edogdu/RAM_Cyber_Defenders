@@ -1,5 +1,6 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
+using System;
 
 public class XRSocketCardHandler : XRSocketInteractor
 {
@@ -135,6 +136,7 @@ public class XRSocketCardHandler : XRSocketInteractor
         }
         return base.CanSelect(interactable);
     }
+    [Obsolete]
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
         base.OnSelectEntered(interactable);
@@ -143,7 +145,7 @@ public class XRSocketCardHandler : XRSocketInteractor
         // Subscribe to the selectExited event
         interactable.selectExited.AddListener(OnSelectExited);
     }
-
+    [Obsolete]
     protected override void OnSelectExited(XRBaseInteractable interactable)
     {
         Debug.Log("Object detached from the socket.");
