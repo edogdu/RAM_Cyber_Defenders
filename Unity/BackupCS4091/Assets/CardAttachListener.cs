@@ -1,10 +1,13 @@
-using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine;
+using System;
+using System.Collections;
 
 public class CardAttachListener : MonoBehaviour
 {
     private XRGrabInteractable grabInteractable;
 
+    [Obsolete]
     void Start()
     {
         // Get the XRGrabInteractable component attached to this GameObject
@@ -17,6 +20,7 @@ public class CardAttachListener : MonoBehaviour
         }
     }
 
+    [Obsolete]
     void OnDestroy()
     {
         // Unsubscribe from the event to prevent memory leaks

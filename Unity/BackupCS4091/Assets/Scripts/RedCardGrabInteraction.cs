@@ -1,18 +1,17 @@
+
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class GreenCardGrabInteraction : XRGrabInteractable
+public class RedCardGrabInteraction : XRGrabInteractable
 {
     public GameObject hiddenModel;
     private bool hasBeenPlaced = false;
-    private XRSocketCardHandler currentSocket; // Keep track of the current socket
+    private RedSocketCardHandler currentSocket; // Keep track of the current socket
     private Rigidbody rb;
     private CardsInformation cardInfo;
     private GameManager gameManager;
     private DeckManager deckManager;
-    //private XRSocketCardHandler greenSocketHandler;
-    //private XRSocketCardHandler redSocketHandler;
-    //private CardsInformation cardInfo;
+
 
     void Start()
     {
@@ -24,29 +23,26 @@ public class GreenCardGrabInteraction : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        if (!hasBeenPlaced && args.interactorObject is XRSocketInteractor)
+        if (this.gameObject.tag == "RedCard")
         {
-            XRSocketInteractor socketInteractor = args.interactorObject as XRSocketInteractor;
-            //this is for the waste socket
-            if (socketInteractor.gameObject.tag == "wasteSocket")
+            if (!hasBeenPlaced && args.interactorObject is XRSocketInteractor)
             {
-                Debug.LogWarning("this is destroy");
-                gameManager.switchTurn();
-                deckManager.DrawCard();
-                Destroy(gameObject);
-                return;
-            }
-            XRSocketCardHandler socket = socketInteractor.GetComponent<XRSocketCardHandler>();
-            /*
-            GameObject greenSocket = socket.GetGreenSocket();
-            GameObject redSocket = socket.GetRedSocket();
-            greenSocketHandler = greenSocket.GetComponent<XRSocketCardHandler>();
-            redSocketHandler = redSocket.GetComponent<XRSocketCardHandler>();
-            */
-            Debug.LogWarning("Green Card");
-            // Check if the socket is occupied
-            //if (socket != null && socket.IsOccupied() == false && socket.GetCardType() == cardInfo.GetSymbol() && gameObject.layer == socketInteractor.gameObject.layer)
-            //{
+                XRSocketInteractor socketInteractor = args.interactorObject as XRSocketInteractor;
+                //this is for the waste socket
+                if (socketInteractor.gameObject.tag == "wasteSocket")
+                {
+                    Debug.LogWarning("this is destroy");
+                    gameManager.switchTurn();
+                    deckManager.DrawCard();
+                    Destroy(gameObject);
+                    return;
+                }
+                RedSocketCardHandler socket = socketInteractor.GetComponent<RedSocketCardHandler>();
+
+                Debug.LogWarning("Red Card");
+
+                //if (socket.IsOccupied() == false && socket.GetCardType() == cardInfo.GetSymbol() && gameObject.layer == socketInteractor.gameObject.layer)
+                Debug.LogWarning("Red Card Placed");
                 // Set the card's position and rotation to match the socket
                 this.transform.position = socketInteractor.transform.position;
                 this.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
@@ -56,10 +52,9 @@ public class GreenCardGrabInteraction : XRGrabInteractable
                 socket.SetOccupied(true);
                 // Mark the socket as occupied and store a reference to the current socket
                 socket.SetCardType(cardInfo.GetSymbol());
-                currentSocket = socket;
                 gameManager.switchTurn();
                 deckManager.DrawCard();
-                //ActivateHiddenModel();
+                ActivateHiddenModel();
                 rb = GetComponent<Rigidbody>();
                 if (rb != null)
                 {
@@ -68,7 +63,7 @@ public class GreenCardGrabInteraction : XRGrabInteractable
                     //rb.constraints = RigidbodyConstraints.FreezeRotation;
                     //rb.constraints = RigidbodyConstraints.FreezeScale;
                 }
-            //}
+            }
         }
     }
 
