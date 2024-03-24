@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class GreenSocketCardHandler : XRSocketInteractor
 {
+    [SerializeField] public GameObject attachedObject;
     private DeckManager deckManager;
     private bool isInSocket = false;
     [SerializeField] private bool isOccupied = false;
     [SerializeField] private int WhatSymbolSocket = 0;
     [SerializeField] protected bool doFilterByType = true;
+    [SerializeField] public bool isObjectAttached = false;
 
     protected override void Start()
     {
@@ -25,8 +27,20 @@ public class GreenSocketCardHandler : XRSocketInteractor
         {
             this.interactionLayers = InteractionLayerMask.GetMask("Green");
         }
+        if(attachedObject != null)
+        {
+            isObjectAttached = true;
+        }
+        else
+        {
+            isObjectAttached = false;
+        }
     }
-
+    public GameObject GetAttachedObject()
+    {
+        // Return the GameObject this script is attached to
+        return attachedObject;
+    }
     public bool IsOccupied()
     {
         return isOccupied;
@@ -74,6 +88,7 @@ public class GreenSocketCardHandler : XRSocketInteractor
     }
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
+        attachedObject = interactable.gameObject;
         base.OnSelectEntered(interactable);
         if (interactable is XRGrabInteractable)
         {
