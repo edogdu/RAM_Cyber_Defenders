@@ -115,6 +115,14 @@ vector<int> shuffleTheCards()
 
 void callTheCardInfos()
 {
+	cards = [ ['Game_Console', 'Asset', 1, 'Shield', 1],
+		  ['Game_Console', 'Asset', 1, 'Shield', 1],
+		  ['Game_Console', 'Asset', 1, 'Shield', 1],
+		  ['Game_Console', 'Asset', 1, 'Shield', 1],
+		  [ ...
+	for i in range(50):
+		card[i].cardCode, card[i].cardsName, card[i].cardType, card[i].cardAttribute, card[i].attributeCode = cards[i]
+		
 	card[0].cardCode = 0, card[0].cardsName = "Game_Console", card[0].cardType = "Asset", card[0].typeNo = 1, card[0].cardAttribute = "Shield", card[0].attributeCode = 1;
 	card[1].cardCode = 1, card[1].cardsName = "Game_Console", card[1].cardType = "Asset", card[1].typeNo = 1, card[1].cardAttribute = "Shield", card[1].attributeCode = 1;
 	card[2].cardCode = 2, card[2].cardsName = "Game_Console", card[2].cardType = "Asset", card[2].typeNo = 1, card[2].cardAttribute = "Shield", card[2].attributeCode = 1;
