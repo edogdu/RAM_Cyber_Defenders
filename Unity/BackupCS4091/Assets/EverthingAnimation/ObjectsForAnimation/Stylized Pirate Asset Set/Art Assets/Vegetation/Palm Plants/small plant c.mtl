@@ -1,0 +1,12 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.1.151580502)
+
+newmtl blinn4SG
+kd 0 0 0
+ka 0 0 0
+ks 0.5 0.5 0.5
+ke 0 0 0
+d 1
+illum 1
+map_kd downloaded_real_test_a.png
+
