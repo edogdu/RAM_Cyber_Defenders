@@ -1,22 +1,22 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
-using System;
 
 public class XRSocketCardHandler : XRSocketInteractor
 {
+    [SerializeField] public GameObject attachedObject;
     [SerializeField] private GameObject GreenSocket;
     [SerializeField] private GameObject RedSocket;
     private DeckManager deckManager;
     [SerializeField] private GreenSocketCardHandler greenSocketHandler;
-    [SerializeField] private XRSocketCardHandler redSocketHandler;
+    [SerializeField] private RedSocketCardHandler redSocketHandler;
     [SerializeField] private bool isOccupied = false;
     [SerializeField] private int WhatSymbolSocket = 0;
     [SerializeField] protected bool doFilterByType = true;
-
+    
     protected override void Start()
     {
         greenSocketHandler = GreenSocket.GetComponent<GreenSocketCardHandler>();
-        redSocketHandler = RedSocket.GetComponent<XRSocketCardHandler>();
+        redSocketHandler = RedSocket.GetComponent<RedSocketCardHandler>();
 
         deckManager = FindObjectOfType<DeckManager>();
     }
@@ -52,6 +52,13 @@ public class XRSocketCardHandler : XRSocketInteractor
         // Your logic for when an object exits the hover state goes here
     }
     */
+
+    public GameObject GetAttachedObject()
+    {
+        // Return the GameObject this script is attached to
+        return attachedObject;
+    }
+
     public bool IsOccupied()
     {
         return isOccupied;
@@ -136,22 +143,23 @@ public class XRSocketCardHandler : XRSocketInteractor
         }
         return base.CanSelect(interactable);
     }
-    [Obsolete]
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
         base.OnSelectEntered(interactable);
         ActivateSocket();
         SetCardType(WhatSymbolSocket);
         // Subscribe to the selectExited event
+        attachedObject = interactable.gameObject;
         interactable.selectExited.AddListener(OnSelectExited);
     }
-    [Obsolete]
+
     protected override void OnSelectExited(XRBaseInteractable interactable)
     {
         Debug.Log("Object detached from the socket.");
         isOccupied = false;
         DeactivateSocket();
         // Unsubscribe from the selectExited event
+
         interactable.selectExited.RemoveListener(OnSelectExited);
     }
 

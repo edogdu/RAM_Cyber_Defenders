@@ -24,21 +24,25 @@ public class BlueCardGrabInteraction : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        if (this.gameObject.tag == "BlueCard")
+        if (!hasBeenPlaced && args.interactorObject is XRSocketInteractor)
         {
-            if (!hasBeenPlaced && args.interactorObject is XRSocketInteractor)
+            XRSocketInteractor socketInteractor = args.interactorObject as XRSocketInteractor;
+            //this is for the waste socket
+            if (socketInteractor.gameObject.tag == "wasteSocket")
             {
-                XRSocketInteractor socketInteractor = args.interactorObject as XRSocketInteractor;
-                //this is for the waste socket
-                if (socketInteractor.gameObject.tag == "wasteSocket")
-                {
-                    Debug.LogWarning("this is destroy");
-                    gameManager.switchTurn();
-                    deckManager.DrawCard();
-                    Destroy(gameObject);
-                    return;
-                }
-                XRSocketCardHandler socket = socketInteractor.GetComponent<XRSocketCardHandler>();
+                Debug.LogWarning("this is destroy");
+                gameManager.switchTurn();
+                deckManager.DrawCard();
+                Destroy(gameObject);
+                return;
+            }
+            XRSocketCardHandler socket = socketInteractor.GetComponent<XRSocketCardHandler>();
+            /*
+            GameObject greenSocket = socket.GetGreenSocket();
+            GameObject redSocket = socket.GetRedSocket();
+            greenSocketHandler = greenSocket.GetComponent<XRSocketCardHandler>();
+            redSocketHandler = redSocket.GetComponent<XRSocketCardHandler>();
+            */  
                 Debug.LogWarning("BlueCard");
                 // Check if the socket is occupied
                 if (socket != null && socket.IsOccupied() == false && gameObject.layer == socketInteractor.gameObject.layer)
@@ -65,7 +69,6 @@ public class BlueCardGrabInteraction : XRGrabInteractable
                         //rb.constraints = RigidbodyConstraints.FreezeScale;
                     }
                 }
-            }
         }
     }
 
