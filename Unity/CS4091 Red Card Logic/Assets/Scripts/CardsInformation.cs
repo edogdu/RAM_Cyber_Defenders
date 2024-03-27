@@ -4,7 +4,7 @@ using UnityEngine;
 public class CardsInformation : MonoBehaviour
 {
     // Player who owns the card
-    private int player = 0; // Player 1 or Player 2
+    [SerializeField] private int player = 0; // Player 1 or Player 2
     [SerializeField] private int symbol;   // 1 for wifi, 2 for lock, 3 for shield, 4 for houses, 5 for all
     [SerializeField] private int color;  // 1 for Blue, 2 for Green, 3 for Red
     private bool isDrop;

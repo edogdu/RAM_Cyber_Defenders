@@ -1,5 +1,7 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
+using System;
+using System.Collections;
 
 public class GreenSocketCardHandler : XRSocketInteractor
 {
@@ -86,10 +88,11 @@ public class GreenSocketCardHandler : XRSocketInteractor
         }
         return base.CanSelect(interactable);
     }
+    [Obsolete]
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
-        attachedObject = interactable.gameObject;
         base.OnSelectEntered(interactable);
+        attachedObject = interactable.gameObject;
         if (interactable is XRGrabInteractable)
         {
             XRGrabInteractable grabInteractable = interactable as XRGrabInteractable;
@@ -101,7 +104,7 @@ public class GreenSocketCardHandler : XRSocketInteractor
             }
         }
     }
-
+    [Obsolete]
     protected override void OnSelectExited(XRBaseInteractable interactable)
     {
         base.OnSelectExited(interactable);

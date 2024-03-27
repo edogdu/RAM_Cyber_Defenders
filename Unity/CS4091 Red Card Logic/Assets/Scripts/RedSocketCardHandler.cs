@@ -34,10 +34,8 @@ public class RedSocketCardHandler : XRSocketInteractor
             this.interactionLayers = InteractionLayerMask.GetMask("Red");
         }
         blueAttachObject = blueSocketHandler.GetAttachedObject();
-        if (greenSocketHandler.isObjectAttached == true)
-        {
-            greenAttachObject = greenSocketHandler.GetAttachedObject();
-        }
+        greenAttachObject = greenSocketHandler.GetAttachedObject();
+
     }
 
     public bool IsOccupied()
@@ -66,6 +64,10 @@ public class RedSocketCardHandler : XRSocketInteractor
         {
             CardsInformation cardInfo = interactableMonoBehaviour.GetComponent<CardsInformation>();
             // Check if the card type matches the expected type
+            if (cardInfo.GetSymbol() == '5')
+            {
+                return true;
+            }
             return cardInfo.GetSymbol() == WhatSymbolSocket; // return true or false
         }
         return base.CanHover(interactable);
@@ -79,7 +81,10 @@ public class RedSocketCardHandler : XRSocketInteractor
             if (isOccupied == false)
             {
                 // Check if the card type matches the expected type\
-
+                if (cardInfo.GetSymbol() == '5')
+                {
+                    return true;
+                }
                 return cardInfo.GetSymbol() == WhatSymbolSocket;
             }
         }
@@ -116,7 +121,7 @@ public class RedSocketCardHandler : XRSocketInteractor
     {
         yield return new WaitForSeconds(4);
         Debug.Log("Finished waiting for 4 seconds");
-        if(greenAttachObject != null)
+        if(greenSocketHandler.isObjectAttached == true)
         {
             Destroy(attachedObject);
             Destroy(greenAttachObject);
@@ -126,7 +131,6 @@ public class RedSocketCardHandler : XRSocketInteractor
         {
             Destroy(attachedObject);
             Destroy(blueAttachObject);
-            
         }
     }
 }

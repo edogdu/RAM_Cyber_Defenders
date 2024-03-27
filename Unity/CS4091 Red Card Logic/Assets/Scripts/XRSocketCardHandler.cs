@@ -1,5 +1,7 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
+using System;
+using System.Collections;
 
 public class XRSocketCardHandler : XRSocketInteractor
 {
@@ -123,8 +125,12 @@ public class XRSocketCardHandler : XRSocketInteractor
         if (doFilterByType && interactable is MonoBehaviour interactableMonoBehaviour)
         {
             CardsInformation cardInfo = interactableMonoBehaviour.GetComponent<CardsInformation>();
-                // Check if the card type matches the expected type
-                return cardInfo.GetSymbol() == WhatSymbolSocket; // return true or false
+            // Check if the card type matches the expected type
+            if (cardInfo.GetSymbol() == '5')
+            {
+                return true;
+            }
+            return cardInfo.GetSymbol() == WhatSymbolSocket; // return true or false
         }
         return base.CanHover(interactable);
     }
@@ -138,11 +144,16 @@ public class XRSocketCardHandler : XRSocketInteractor
                 {
                     // Check if the card type matches the expected type\
                     SetOccupied(true);
-                    return cardInfo.GetSymbol() == WhatSymbolSocket;
+                if (cardInfo.GetSymbol() == '5')
+                {
+                    return true;
+                }
+                return cardInfo.GetSymbol() == WhatSymbolSocket;
                 }
         }
         return base.CanSelect(interactable);
     }
+    [Obsolete]
     protected override void OnSelectEntered(XRBaseInteractable interactable)
     {
         base.OnSelectEntered(interactable);
@@ -152,7 +163,7 @@ public class XRSocketCardHandler : XRSocketInteractor
         attachedObject = interactable.gameObject;
         interactable.selectExited.AddListener(OnSelectExited);
     }
-
+    [Obsolete]
     protected override void OnSelectExited(XRBaseInteractable interactable)
     {
         Debug.Log("Object detached from the socket.");

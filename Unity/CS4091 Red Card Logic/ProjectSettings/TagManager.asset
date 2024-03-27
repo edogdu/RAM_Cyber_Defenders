@@ -12,6 +12,11 @@ TagManager:
   - wasteSocket
   - GreenCard
   - GreenSocket
+  - RedSocket
+  - RedCard
+  - BlueSocketPlayer2
+  - GreenSocketPlayer2
+  - RedSocketPlayer2
   layers:
   - Default
   - TransparentFX

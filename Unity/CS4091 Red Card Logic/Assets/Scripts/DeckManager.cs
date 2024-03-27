@@ -60,7 +60,7 @@ public class DeckManager : MonoBehaviour
         initialDrawnCardPosition = currentDrawnCard.transform.position;
 
         Debug.Log("Card drawn and instantiated on top of the deck!");
-        if(gameManager.decidedTurn == 1)
+        if (gameManager.decidedTurn == 1)
         {
             currentDrawnCard.GetComponent<CardsInformation>().SetPlayer(1);
         }
@@ -68,7 +68,7 @@ public class DeckManager : MonoBehaviour
         {
             currentDrawnCard.GetComponent<CardsInformation>().SetPlayer(2);
         }
-        
+
         return currentDrawnCard;
     }
     /*
@@ -92,7 +92,10 @@ public class DeckManager : MonoBehaviour
         }
     }
     */
-
+    public GameObject GetTopCard
+    {
+        get { return currentDrawnCard; }
+    }
     public int ReorderDeckCount
     {
         get { return reorrderDeck.Count; }

@@ -5,7 +5,7 @@ public class GreenCardGrabInteraction : XRGrabInteractable
 {
     public GameObject hiddenModel;
     private bool hasBeenPlaced = false;
-    private XRSocketCardHandler currentSocket; // Keep track of the current socket
+    private GreenSocketCardHandler currentSocket; // Keep track of the current socket
     private Rigidbody rb;
     private CardsInformation cardInfo;
     private GameManager gameManager;
@@ -24,49 +24,55 @@ public class GreenCardGrabInteraction : XRGrabInteractable
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
-        if (!hasBeenPlaced && args.interactorObject is XRSocketInteractor)
+        if (this.gameObject.tag == "GreenCard")
         {
-            XRSocketInteractor socketInteractor = args.interactorObject as XRSocketInteractor;
-            //this is for the waste socket
-            if (socketInteractor.gameObject.tag == "wasteSocket")
+            if (!hasBeenPlaced && args.interactorObject is XRSocketInteractor)
             {
-                Debug.LogWarning("this is destroy");
-                gameManager.switchTurn();
-                deckManager.DrawCard();
-                Destroy(gameObject);
-                return;
-            }
-            XRSocketCardHandler socket = socketInteractor.GetComponent<XRSocketCardHandler>();
-            /*
-            GameObject greenSocket = socket.GetGreenSocket();
-            GameObject redSocket = socket.GetRedSocket();
-            greenSocketHandler = greenSocket.GetComponent<XRSocketCardHandler>();
-            redSocketHandler = redSocket.GetComponent<XRSocketCardHandler>();
-            */
-            Debug.LogWarning("Green Card");
-            // Check if the socket is occupied
-            if (socket != null && socket.IsOccupied() == false && socket.GetCardType() == cardInfo.GetSymbol() && gameObject.layer == socketInteractor.gameObject.layer)
-            {
-                // Set the card's position and rotation to match the socket
-                this.transform.position = socketInteractor.transform.position;
-                this.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
-                this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
-                // Mark the card as placed
-                hasBeenPlaced = true;
-                socket.SetOccupied(true);
-                // Mark the socket as occupied and store a reference to the current socket
-                socket.SetCardType(cardInfo.GetSymbol());
-                currentSocket = socket;
-                gameManager.switchTurn();
-                deckManager.DrawCard();
-                //ActivateHiddenModel();
-                rb = GetComponent<Rigidbody>();
-                if (rb != null)
+                XRSocketInteractor socketInteractor = args.interactorObject as XRSocketInteractor;
+                //this is for the waste socket
+                if (socketInteractor.gameObject.tag == "wasteSocket")
                 {
-                    rb.constraints = RigidbodyConstraints.FreezeAll;
-                    //rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
-                    //rb.constraints = RigidbodyConstraints.FreezeRotation;
-                    //rb.constraints = RigidbodyConstraints.FreezeScale;
+                    Debug.LogWarning("this is destroy");
+                    gameManager.switchTurn();
+                    deckManager.DrawCard();
+                    Destroy(gameObject);
+                    return;
+                }
+
+                GreenSocketCardHandler socket = socketInteractor.GetComponent<GreenSocketCardHandler>();
+                if (socket == null)
+                {
+                    Debug.LogWarning("GreenSocketCardHandler component not found on socket!");
+                    return;
+                }
+
+                Debug.LogWarning("Green Card");
+                // Check if the socket is occupied
+                //if (socket != null && socket.IsOccupied() == false && socket.GetCardType() == cardInfo.GetSymbol() && gameObject.layer == socketInteractor.gameObject.layer)
+                //{
+                // Set the card's position and rotation to match the socket
+                if (socketInteractor.gameObject.tag == "GreenSocket")
+                {
+                    this.transform.position = socketInteractor.transform.position;
+                    this.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
+                    this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
+                    // Mark the card as placed
+                    hasBeenPlaced = true;
+                    socket.SetOccupied(true);
+                    // Mark the socket as occupied and store a reference to the current socket
+                    socket.SetCardType(cardInfo.GetSymbol());
+                    currentSocket = socket;
+                    gameManager.switchTurn();
+                    deckManager.DrawCard();
+                    //ActivateHiddenModel();
+                    rb = GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        rb.constraints = RigidbodyConstraints.FreezeAll;
+                        //rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+                        //rb.constraints = RigidbodyConstraints.FreezeRotation;
+                        //rb.constraints = RigidbodyConstraints.FreezeScale;
+                    }
                 }
             }
         }
