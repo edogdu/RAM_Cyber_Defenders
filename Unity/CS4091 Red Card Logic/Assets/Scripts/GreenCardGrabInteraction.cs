@@ -51,7 +51,7 @@ public class GreenCardGrabInteraction : XRGrabInteractable
                 //if (socket != null && socket.IsOccupied() == false && socket.GetCardType() == cardInfo.GetSymbol() && gameObject.layer == socketInteractor.gameObject.layer)
                 //{
                 // Set the card's position and rotation to match the socket
-                if (socketInteractor.gameObject.tag == "GreenSocket")
+                if (socketInteractor.gameObject.tag == "GreenSocket" || socketInteractor.gameObject.tag == "GreenSocketPlayer2")
                 {
                     this.transform.position = socketInteractor.transform.position;
                     this.transform.rotation = Quaternion.Euler(0f, 270f, 0f);
