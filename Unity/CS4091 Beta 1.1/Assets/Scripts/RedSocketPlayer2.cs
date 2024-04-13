@@ -112,7 +112,8 @@ public class RedSocketPlayer2 : XRSocketInteractor
             {
                 isOccupied = true; // Object is now in the socket
                 isInSocket = true;
-
+                attachedObject.transform.position = transform.position;
+                attachedObject.transform.rotation = transform.rotation;
                 interactable.selectExited.AddListener(OnSelectExited);
             }
         }

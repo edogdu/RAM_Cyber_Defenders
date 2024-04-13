@@ -114,7 +114,7 @@ public class AIPlayer : MonoBehaviour
     }
     public IEnumerator WaitToPlay()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         if (cardInfo.GetPlayer() == 2)
         {
             Rigidbody rb = deckManagerGameObject.GetComponent<Rigidbody>();
@@ -129,12 +129,11 @@ public class AIPlayer : MonoBehaviour
             //deckManagerGameObject.transform.position = targetPosition2;
             // Move the deckManagerGameObject towards targetPosition2 using Translate
             pickUp = true;
+            yield return new WaitForSeconds(1);
             animator.SetTrigger("PickUp");
             yield return new WaitForSeconds(1);
             pickUp = false;
-            Debug.LogError(Time.time);
             Debug.Log("Player 2's turn");
-            Debug.LogError(cardInfo.GetColor());
             //this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
             if (cardInfo.GetColor() == 1)
             {
@@ -155,8 +154,6 @@ public class AIPlayer : MonoBehaviour
             }
             else if (cardInfo.GetColor() == 2)
             {
-
-
                 GameObject firstAvailableSocket = FindFirstAvailableGreenSocket(cardInfo);
                 //got a green card
                 if (firstAvailableSocket != null)
@@ -170,10 +167,8 @@ public class AIPlayer : MonoBehaviour
             }
             else if (cardInfo.GetColor() == 3)
             {
-
-
                 GameObject firstAvailableSocket = FindFirstAvailableRedSocket(cardInfo);
-                //got a green card
+                //got a red card
                 Debug.LogError("try to attach at " + firstAvailableSocket);
                 if (firstAvailableSocket != null)
                 {
