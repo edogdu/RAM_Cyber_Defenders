@@ -18,6 +18,7 @@ TagManager:
   - GreenSocketPlayer2
   - RedSocketPlayer2
   - RedCardPlayer2
+  - botHand
   layers:
   - Default
   - TransparentFX

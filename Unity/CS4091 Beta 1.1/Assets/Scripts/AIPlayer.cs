@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AIPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject cardPostion;
-    [SerializeField] private GameObject cardPostion2;
+    //[SerializeField] private GameObject cardPostion;
+    private Animator animator;
+    [SerializeField] private GameObject botHand;
     [SerializeField] private GameObject deckManagerGameObject;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DeckManager deckManager;
@@ -16,17 +17,19 @@ public class AIPlayer : MonoBehaviour
     [SerializeField] private GameObject wastedDeck;
     public MessageWasted messageWasted;
     public float speed = 1.0f;
-    private Vector3 targetPosition2;
+    bool pickUp = false;
+    //private Vector3 targetPosition2;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         deckManager = FindObjectOfType<DeckManager>();
         blueSockets = GameObject.FindGameObjectsWithTag("BlueSocketPlayer2");
         greenSockets = GameObject.FindGameObjectsWithTag("GreenSocketPlayer2");
         redSockets = GameObject.FindGameObjectsWithTag("RedSocketPlayer2");
         Debug.Log("Number of blue sockets found: " + blueSockets.Length);
-        targetPosition2 = cardPostion2.transform.position;
+        //targetPosition2 = cardPostion2.transform.position;
     }
 
     // Update is called once per frame
@@ -36,7 +39,13 @@ public class AIPlayer : MonoBehaviour
         deckManagerGameObject = deckManager.GetTopCard;
         cardInfo = deckManagerGameObject.GetComponent<CardsInformation>();
         //StartCoroutine(WaitToPlay());
+        botHand = GameObject.FindWithTag("botHand");
 
+        if (pickUp == true)
+        {
+
+            deckManagerGameObject.transform.position = botHand.transform.position;
+        }
     }
 
     GameObject FindFirstAvailableBlueSocket()
@@ -77,7 +86,7 @@ public class AIPlayer : MonoBehaviour
         foreach (GameObject socket in redSockets)
         {
             RedSocketPlayer2 socketHandler = socket.GetComponent<RedSocketPlayer2>();
-            if (socketHandler != null  && (cardInfo.GetSymbol() == socketHandler.GetCardType() || cardInfo.GetSymbol() == 5) )
+            if (socketHandler != null && (cardInfo.GetSymbol() == socketHandler.GetCardType() || cardInfo.GetSymbol() == 5))
             {
                 return socket;
             }
@@ -112,12 +121,17 @@ public class AIPlayer : MonoBehaviour
             if (rb != null)
             {
                 rb.useGravity = false; // Disable gravity
-            }
-            // Move the deckManagerGameObject towards targetPosition using Translate
-            deckManagerGameObject.transform.position = targetPosition2;
 
+                //rb.isKinematic = true;
+            }
+
+            // Move the deckManagerGameObject towards targetPosition using Translate
+            //deckManagerGameObject.transform.position = targetPosition2;
             // Move the deckManagerGameObject towards targetPosition2 using Translate
-            yield return new WaitForSeconds(5);
+            pickUp = true;
+            animator.SetTrigger("PickUp");
+            yield return new WaitForSeconds(1);
+            pickUp = false;
             Debug.LogError(Time.time);
             Debug.Log("Player 2's turn");
             Debug.LogError(cardInfo.GetColor());
@@ -131,7 +145,7 @@ public class AIPlayer : MonoBehaviour
                 if (firstAvailableSocket != null)
                 {
 
-                    deckManagerGameObject.transform.position = Vector3.Lerp(deckManagerGameObject.transform.position, firstAvailableSocket.transform.position, 0.1f);
+                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
@@ -147,7 +161,7 @@ public class AIPlayer : MonoBehaviour
                 //got a green card
                 if (firstAvailableSocket != null)
                 {
-                    deckManagerGameObject.transform.position = Vector3.Lerp(deckManagerGameObject.transform.position, firstAvailableSocket.transform.position, 0.1f);
+                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
@@ -163,7 +177,7 @@ public class AIPlayer : MonoBehaviour
                 Debug.LogError("try to attach at " + firstAvailableSocket);
                 if (firstAvailableSocket != null)
                 {
-                    deckManagerGameObject.transform.position = Vector3.Lerp(deckManagerGameObject.transform.position, firstAvailableSocket.transform.position, 0.1f);
+                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 
                 }
                 else
