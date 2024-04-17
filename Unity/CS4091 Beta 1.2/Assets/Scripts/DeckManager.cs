@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class DeckManager : MonoBehaviour
 {
@@ -48,7 +49,7 @@ public class DeckManager : MonoBehaviour
         if (reorrderDeck.Count == 0)
         {
             Debug.LogWarning("Deck is empty!");
-            gameManager.determineWin();
+            StartCoroutine(waitTenSecond());
             return null;
         }
 
@@ -57,7 +58,7 @@ public class DeckManager : MonoBehaviour
 
         // Instantiate the drawn card prefab on top of the deck
         currentDrawnCard = Instantiate(drawnCardPrefab, transform.position + Vector3.up, transform.rotation);
-        
+
 
         Debug.Log("Card drawn and instantiated on top of the deck!");
         if (gameManager.decidedTurn == 1)
@@ -67,7 +68,7 @@ public class DeckManager : MonoBehaviour
         else
         {
             currentDrawnCard.GetComponent<CardsInformation>().SetPlayer(2);
-            
+
         }
         aiplayer.aiTurn();
         return currentDrawnCard;
@@ -79,6 +80,12 @@ public class DeckManager : MonoBehaviour
     public int ReorderDeckCount
     {
         get { return reorrderDeck.Count; }
+    }
+
+    IEnumerator waitTenSecond()
+    {
+        yield return new WaitForSeconds(5);
+        gameManager.determineWin();
     }
 
 }
