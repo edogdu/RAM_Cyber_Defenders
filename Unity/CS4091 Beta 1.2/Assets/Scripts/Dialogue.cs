@@ -8,7 +8,7 @@ public class Dialogue : MonoBehaviour
 	[SerializeField] public GameObject Textbox;
     [SerializeField] public TextMeshProUGUI dialogue;
 	
-	void Speech (string CardString)
+	public void Speech (string CardString)
 	{
 		StartCoroutine(UpateTheTextBox(CardString));
 	}
@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
 	{
 		Textbox.SetActive(true);
 		dialogue.text = CardString;
-		yield return new WaitForSeconds(2);
-		Textbox.SetActive(false);
+		yield return new WaitForSeconds(7);
+		//Textbox.SetActive(false);
 	}
 }

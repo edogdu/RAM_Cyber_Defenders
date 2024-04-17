@@ -10463,8 +10463,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 77.29
-  m_fontSizeBase: 77.29
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11477,6 +11477,7 @@ MonoBehaviour:
   wastedDeck: {fileID: 1615759382}
   messageWasted: {fileID: 1410507842}
   speed: 1
+  dialogueScript: {fileID: 1012640369}
 --- !u!95 &927374187
 Animator:
   serializedVersion: 5

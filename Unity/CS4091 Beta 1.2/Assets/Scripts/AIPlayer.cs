@@ -19,6 +19,10 @@ public class AIPlayer : MonoBehaviour
     public float speed = 1.0f;
     bool pickUp = false;
     //private Vector3 targetPosition2;
+    string cardString = "Your dialogue text here";
+    //dialogue  text box from ai
+    [SerializeField] public Dialogue dialogueScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -124,7 +128,7 @@ public class AIPlayer : MonoBehaviour
 
                 //rb.isKinematic = true;
             }
-
+            //dialogueScript.Speech(cardString);
             // Move the deckManagerGameObject towards targetPosition using Translate
             //deckManagerGameObject.transform.position = targetPosition2;
             // Move the deckManagerGameObject towards targetPosition2 using Translate
@@ -143,11 +147,30 @@ public class AIPlayer : MonoBehaviour
                 Debug.LogError("try to attach at " + firstAvailableSocket);
                 if (firstAvailableSocket != null)
                 {
+                    if(cardInfo.GetSymbol() == 1)
+                    {
+                        cardString = "This is a cell phone card. It is an Asset Card. We use cell phones every day, and they connected the internet!";
+                    }
+                    else if (cardInfo.GetSymbol() == 2)
+                    {
+                        cardString = "This is a computer card. It is an Asset Card. We use computers to do homework and play games. I should protect it from viruses!";
+                    }
+                    else if (cardInfo.GetSymbol() == 3)
+                    {
+                        cardString = "This is a gaming console card. It is an Asset Card. I love to play video games! I need to protect my games!";
+                    }
+                    else if (cardInfo.GetSymbol() == 4)
+                    {
+                        cardString = "This is a private information card. It is an Asset Card. Private information like your password and credit card details are important to keep safe!";
+                    }
 
+                    dialogueScript.Speech(cardString);
                     deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
+                    cardString = "This is an Assets Card; however, I don't have room to place it. Unfortunate.";
+                    dialogueScript.Speech(cardString);
                     MoveCardToWasteDeck(deckManagerGameObject);
                 }
 
@@ -158,10 +181,30 @@ public class AIPlayer : MonoBehaviour
                 //got a green card
                 if (firstAvailableSocket != null)
                 {
+                    if (cardInfo.GetSymbol() == 1)
+                    {
+                        cardString = "This is an Encryption card. It is a Defense Card. It locks my information on my phone using a password so hackers can't find me.";
+                    }
+                    else if (cardInfo.GetSymbol() == 2)
+                    {
+                        cardString = "This is a Fire-Wall card. It is a Defense Card. A firewall protects the computer from viruses and attacks.";
+                    }
+                    else if (cardInfo.GetSymbol() == 3)
+                    {
+                        cardString = "This is an Anti-malware card. It is a Defense Card. With an Anti-malware defense card, I can protect my gaming console from malware.";
+                    }
+                    else if (cardInfo.GetSymbol() == 4)
+                    {
+                        cardString = "This is an Education card. It is a Defense Card. Learning about cybersecurity can help us better recognize attacks.";
+                    }
+
+                    dialogueScript.Speech(cardString);
                     deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
+                    cardString = "I got a defense card, however, there is no card to protect. Unfortunate.";
+                    dialogueScript.Speech(cardString);
                     MoveCardToWasteDeck(deckManagerGameObject);
                 }
             }
@@ -172,16 +215,42 @@ public class AIPlayer : MonoBehaviour
                 Debug.LogError("try to attach at " + firstAvailableSocket);
                 if (firstAvailableSocket != null)
                 {
+                    if (cardInfo.GetSymbol() == 1)
+                    {
+                        cardString = "This is a Wireless Attack card. It is an Attack Card. Attackers can attack your phone through the internet. Don't connect to suspicious networks.";
+                    }
+                    else if (cardInfo.GetSymbol() == 2)
+                    {
+                        cardString = "This is a hacker card. It is an Attack Card. A hacker is someone who tries to attack your computer and steal your information. They are criminals";
+                    }
+                    else if (cardInfo.GetSymbol() == 3)
+                    {
+                        cardString = "This is a Malware card. It is an Attack Card. Malware is designed to cause damage to your console and steal your game files.";
+                    }
+                    else if (cardInfo.GetSymbol() == 4)
+                    {
+                        cardString = "This is a Phishing card. It is an Attack Card. Some emails are send by an imposter. Don't click on links in emails unless you know who sent it!";
+                    }
+                    else if (cardInfo.GetSymbol() == 5)
+                    {
+                        cardString = "This is a Cyber Attack card. It is an Attack Card. I can destroy any card with a cyber attack card. Cyber attacks are dangerous.";
+                    }
+
+                    dialogueScript.Speech(cardString);
                     deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 
                 }
                 else
                 {
+                    cardString = "I got a attack card, however, there is no card to attack. HAHA.";
+                    dialogueScript.Speech(cardString);
                     MoveCardToWasteDeck(deckManagerGameObject);
                 }
             }
             else
             {
+                cardString = "I don't know what card this is. ???";
+                dialogueScript.Speech(cardString);
                 MoveCardToWasteDeck(deckManagerGameObject);
             }
         }
