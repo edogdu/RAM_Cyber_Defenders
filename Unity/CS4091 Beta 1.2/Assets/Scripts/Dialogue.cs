@@ -8,6 +8,8 @@ public class Dialogue : MonoBehaviour
 	[SerializeField] public GameObject Textbox;
     [SerializeField] public TextMeshProUGUI dialogue;
 	
+	[SerializeField] public DeckManager deckScript;
+	
 	public void Speech (string CardString)
 	{
 		StartCoroutine(UpateTheTextBox(CardString));
@@ -20,4 +22,18 @@ public class Dialogue : MonoBehaviour
 		yield return new WaitForSeconds(7);
 		//Textbox.SetActive(false);
 	}
+	
+	//Attempt at making the textbox appear and disapper per turn; might try this again later
+	//void Update()
+	//{
+	//	if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+	//	{
+	//		Textbox.SetActive(true);
+	//	}
+	//	else
+	//	{
+	//		Textbox.SetActive(false);
+	//	}
+	//}
+	
 }

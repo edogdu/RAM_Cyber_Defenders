@@ -6,7 +6,9 @@ public class DeckManager : MonoBehaviour
 {
     public List<GameObject> cardPrefabs;
     private List<GameObject> deck = new List<GameObject>();
-    private GameObject currentDrawnCard;
+	
+    public GameObject currentDrawnCard;
+	
     private GameManager gameManager;
     [SerializeField] private AIPlayer aiplayer;
     public List<GameObject> reorrderDeck;
@@ -26,6 +28,7 @@ public class DeckManager : MonoBehaviour
         InitializeDeck();
         DrawCard();
     }
+	
 
     void InitializeDeck()
     {
