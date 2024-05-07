@@ -1,5 +1,9 @@
 # VR Cyber Game Development CS-4091 - 020
 
+## Credit:
+
+This VR experience is inspired by the real game "Cyber Threat Guardian" developed by the Center for Infrastructure Assurance and Security (CIAS) at the University of Texas at San Antonio (UTSA). To learn more about the original game, please visit [CIAS at UTSA Cyber Threat Guardian](https://cias.utsa.edu/ctg/).
+
 ## CyberGuard: Augmented Reality/Virtual Reality Cybersecurity Card Game
 
 Welcome to the Cyber Threat Guardian (CTG) VR project repository. This project is a part of the CS-4091 Research Class, aimed at exploring new ways to teach cybersecurity to children. In this adaptation, we've transformed the Cyber Threat Guardian (CTG) physical card game into a virtual reality (VR) experience, allowing kids to immerse themselves in a cyber environment while introducing them to new cybersecurity concepts.
