@@ -4,6 +4,13 @@ public class CorrectingPostion : MonoBehaviour
 {
     public GameObject table;
     public GameObject deck;
+
+    private float tableY = 0.78f;
+    private float ceilingY = 2.5f;
+    private float tableUpX = 0.46f;
+    private float tableDownX = -0.47f;
+    private float tableLeftZ = 0.85f;
+    private float tableRightZ = -0.93f;
     private void Start()
     {
         table = GameObject.FindGameObjectWithTag("Table");
@@ -12,9 +19,25 @@ public class CorrectingPostion : MonoBehaviour
     void Update()
     {
         // Check if the card is below the deck
-        if (transform.position.y < table.transform.position.y)
+        if (transform.position.y < tableY)
         {
             // Move the card back to the top of the deck
+            MoveToTopOfDeck();
+        }
+        // Check if the card is over the ceiling
+        else if (transform.position.y > ceilingY)
+        {
+            // Move the card back to the top of the deck
+            MoveToTopOfDeck();
+        }
+        // Check if the card is out of the table boundary in X-axis
+        else if (transform.position.x > tableUpX || transform.position.x < tableDownX)
+        {
+            MoveToTopOfDeck();
+        }
+        // Check if the card is out of the table boundary in Z-axis
+        else if (transform.position.z > tableLeftZ || transform.position.z < tableRightZ)
+        {
             MoveToTopOfDeck();
         }
     }
