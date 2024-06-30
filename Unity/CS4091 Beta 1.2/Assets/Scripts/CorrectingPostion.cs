@@ -5,7 +5,7 @@ public class CorrectingPostion : MonoBehaviour
     public GameObject table;
     public GameObject deck;
 
-    private float tableY = 0.78f;
+    private float tableY = 0.782f;
     private float ceilingY = 2.5f;
     private float tableUpX = 0.46f;
     private float tableDownX = -0.47f;
