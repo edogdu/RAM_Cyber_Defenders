@@ -16,12 +16,18 @@ public class AIPlayer : MonoBehaviour
     private GameObject[] redSockets; // Store references to green sockets
     [SerializeField] private GameObject wastedDeck;
     public MessageWasted messageWasted;
-    public float speed = 1.0f;
+    //public float speed = 1.0f;
     bool pickUp = false;
     //private Vector3 targetPosition2;
     string cardString = "Your dialogue text here";
     //dialogue  text box from ai
     [SerializeField] public Dialogue dialogueScript;
+
+    // needed for card moving animation
+    private GameObject moving;
+    private GameObject destination;
+    private float speed = 0.03f;
+    private bool animationTrigger = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,10 +51,27 @@ public class AIPlayer : MonoBehaviour
         //StartCoroutine(WaitToPlay());
         botHand = GameObject.FindWithTag("botHand");
 
+        // card moving animation(to AI)
+        /*
         if (pickUp == true)
         {
 
-            deckManagerGameObject.transform.position = botHand.transform.position;
+            botHand.transform.position = deckManagerGameObject.transform.position;
+            pickUp = false;
+            animationTrigger = true;
+        }*/
+
+        // card moving animation(from AI)
+        if (animationTrigger == true)
+        {
+            if (moving.transform.position != destination.transform.position)
+            {
+                moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+            }
+            else
+            {
+                animationTrigger = false;
+            }
         }
     }
 
@@ -97,18 +120,21 @@ public class AIPlayer : MonoBehaviour
         }
         return null; // No available red socket found
     }
+    
+    // function for card moving animation; check Update() function to see further process
+    void setForCardMoving(GameObject movingObject, GameObject arrival)
+    {
+        moving = movingObject;    // what is moving
+        destination = arrival;    // where to go
+        animationTrigger = true;  // check the Update() function
+    }
 
     void MoveCardToWasteDeck(GameObject card)
     {
         if (wastedDeck != null && card != null)
         {
-            /*
-            if (messageWasted != null)
-            {
-                messageWasted.increaseCount();
-            }
-            */
-            card.transform.position = wastedDeck.transform.position;
+            setForCardMoving(card, wastedDeck);
+            //card.transform.position = wastedDeck.transform.position;
         }
     }
 
@@ -132,13 +158,15 @@ public class AIPlayer : MonoBehaviour
             // Move the deckManagerGameObject towards targetPosition using Translate
             //deckManagerGameObject.transform.position = targetPosition2;
             // Move the deckManagerGameObject towards targetPosition2 using Translate
-            pickUp = true;
+
+            // pickUp = true;
             yield return new WaitForSeconds(1);
             animator.SetTrigger("PickUp");
             yield return new WaitForSeconds(1);
-            pickUp = false;
+            // pickUp = false;
             Debug.Log("Player 2's turn");
             //this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
+
             if (cardInfo.GetColor() == 1)
             {
 
@@ -165,7 +193,9 @@ public class AIPlayer : MonoBehaviour
                     }
 
                     dialogueScript.Speech(cardString);
-                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
+
+                    setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+                    // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
@@ -199,7 +229,9 @@ public class AIPlayer : MonoBehaviour
                     }
 
                     dialogueScript.Speech(cardString);
-                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
+
+                    setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+                    // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
@@ -237,8 +269,9 @@ public class AIPlayer : MonoBehaviour
                     }
 
                     dialogueScript.Speech(cardString);
-                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 
+                    setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+                    // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
