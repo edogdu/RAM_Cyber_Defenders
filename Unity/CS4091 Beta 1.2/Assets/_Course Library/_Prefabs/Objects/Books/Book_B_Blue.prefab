@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1386430896625562620}
   serializedVersion: 2
   m_LocalRotation: {x: -0.50125843, y: 0.49873844, z: -0.49873844, w: 0.50125843}
-  m_LocalPosition: {x: 0.087, y: 0.0002, z: 0.093}
+  m_LocalPosition: {x: 0.1524, y: 0.023, z: 0.093}
   m_LocalScale: {x: 0.2525284, y: 0.49999988, z: 0.4999875}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 8550047635216545401}
   - component: {fileID: 4686000443494447580}
   - component: {fileID: 7416570806179712278}
-  - component: {fileID: 3398756008047486944}
   m_Layer: 0
   m_Name: Book_B_Blue
   m_TagString: Untagged
@@ -116,24 +115,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3398756008047486944
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9073644575141162179}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.20458332, y: 0.04555917, z: 0.24660705}
-  m_Center: {x: 0.0034397058, y: 0.00036501698, z: 0}
