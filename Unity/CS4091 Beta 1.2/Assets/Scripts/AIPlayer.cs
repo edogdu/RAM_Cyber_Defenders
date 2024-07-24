@@ -145,7 +145,8 @@ public class AIPlayer : MonoBehaviour
     public IEnumerator WaitToPlay()
     {
         yield return new WaitForSeconds(1);
-        if (cardInfo.GetPlayer() == 2)
+     
+		if (cardInfo.GetPlayer() == 2)
         {
             Rigidbody rb = deckManagerGameObject.GetComponent<Rigidbody>();
             if (rb != null)
@@ -160,7 +161,7 @@ public class AIPlayer : MonoBehaviour
             // Move the deckManagerGameObject towards targetPosition2 using Translate
 
             // pickUp = true;
-            yield return new WaitForSeconds(1);
+            //yield return new WaitForSeconds(1);
             animator.SetTrigger("PickUp");
             yield return new WaitForSeconds(1);
             // pickUp = false;
