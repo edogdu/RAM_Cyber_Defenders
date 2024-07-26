@@ -259,4 +259,21 @@ public class GameManager : MonoBehaviour
         }
         return 0;
     }
+	
+	public int WhoWon()
+	{
+		if (Player1count > Player2count)
+        {
+            return 3;
+        }
+        else if(Player1count < Player2count)
+        {
+            return 1;
+        }
+        else if (Player1count == Player2count)
+        {
+            return 2;
+        }
+		return 0;
+	}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,6 +29,9 @@ public class AIPlayer : MonoBehaviour
     private GameObject destination;
     private float speed = 0.03f;
     private bool animationTrigger = false;
+	
+	private int socketNumber = 0;
+	//private int cardColor = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -75,22 +79,36 @@ public class AIPlayer : MonoBehaviour
         }
     }
 
+// [ Trying to use this to set up the Socket parameter in the animator, but I'm having trouble getting it to work right ]
     GameObject FindFirstAvailableBlueSocket()
     {
-
+		animator.SetInteger("Color", 1);
+		
+		
         foreach (GameObject socket in blueSockets)
         {
+
+			
             XRSocketCardHandler socketHandler = socket.GetComponent<XRSocketCardHandler>();
             if (socketHandler != null && !socketHandler.IsOccupied())
             {
+				// This gets me a number, but it doesn't seem to be working how I want it to... 
+				socketNumber = Array.IndexOf(blueSockets, socket);
+				
+				animator.SetInteger("Socket", socketNumber);
+				
                 return socket;
             }
         }
+		
+		animator.SetInteger("Socket", 0);
+		
         return null; // No available blue socket found
     }
 
     GameObject FindFirstAvailableGreenSocket(CardsInformation cardInfo)
     {
+		animator.SetInteger("Color", 2);
 
         greenSockets = GameObject.FindGameObjectsWithTag("GreenSocketPlayer2");
         Debug.Log("Number of green sockets found: " + greenSockets.Length);
@@ -102,11 +120,15 @@ public class AIPlayer : MonoBehaviour
                 return socket;
             }
         }
+		
+		animator.SetInteger("Socket", 0);
+		
         return null; // No available green socket found
     }
 
     GameObject FindFirstAvailableRedSocket(CardsInformation cardInfo)
     {
+		animator.SetInteger("Color", 3);
 
         redSockets = GameObject.FindGameObjectsWithTag("RedSocketPlayer2");
         Debug.Log("Number of red sockets found: " + redSockets.Length);
@@ -118,6 +140,9 @@ public class AIPlayer : MonoBehaviour
                 return socket;
             }
         }
+		
+		animator.SetInteger("Socket", 0);
+		
         return null; // No available red socket found
     }
     
@@ -291,7 +316,12 @@ public class AIPlayer : MonoBehaviour
 
     }
 
-
+	public void GameEnd()
+	{
+		int i = gameManager.WhoWon();
+		
+		animator.SetInteger("Game End", i);
+	}
 
 }
 
