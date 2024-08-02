@@ -56,14 +56,14 @@ public class AIPlayer : MonoBehaviour
         botHand = GameObject.FindWithTag("botHand");
 
         // card moving animation(to AI)
-        /*
+        
         if (pickUp == true)
         {
 
             botHand.transform.position = deckManagerGameObject.transform.position;
             pickUp = false;
             animationTrigger = true;
-        }*/
+        }
 
         // card moving animation(from AI)
         if (animationTrigger == true)
@@ -84,16 +84,17 @@ public class AIPlayer : MonoBehaviour
     {
 		animator.SetInteger("Color", 1);
 		
-		
         foreach (GameObject socket in blueSockets)
         {
-
-			
             XRSocketCardHandler socketHandler = socket.GetComponent<XRSocketCardHandler>();
             if (socketHandler != null && !socketHandler.IsOccupied())
             {
-				// This gets me a number, but it doesn't seem to be working how I want it to... 
-				socketNumber = Array.IndexOf(blueSockets, socket);
+				
+				string socketName = socket.ToString();
+				char name = socketName[9];
+				
+				socketNumber = name - '0';
+				
 				
 				animator.SetInteger("Socket", socketNumber);
 				
@@ -117,6 +118,14 @@ public class AIPlayer : MonoBehaviour
             GreenSocketCardHandler socketHandler = socket.GetComponent<GreenSocketCardHandler>();
             if (socketHandler != null && !socketHandler.IsOccupied() && cardInfo.GetSymbol() == socketHandler.GetCardType())
             {
+				string socketName = socket.ToString();
+				char name = socketName[9];
+				
+				socketNumber = name - '0';
+				
+				
+				animator.SetInteger("Socket", socketNumber);
+				
                 return socket;
             }
         }
@@ -137,6 +146,15 @@ public class AIPlayer : MonoBehaviour
             RedSocketPlayer2 socketHandler = socket.GetComponent<RedSocketPlayer2>();
             if (socketHandler != null && (cardInfo.GetSymbol() == socketHandler.GetCardType() || cardInfo.GetSymbol() == 5))
             {
+				
+				string socketName = socket.ToString();
+				char name = socketName[9];
+				
+				socketNumber = name - '0';
+				
+				
+				animator.SetInteger("Socket", socketNumber);
+				
                 return socket;
             }
         }
@@ -181,6 +199,7 @@ public class AIPlayer : MonoBehaviour
                 //rb.isKinematic = true;
             }
             //dialogueScript.Speech(cardString);
+			
             // Move the deckManagerGameObject towards targetPosition using Translate
             //deckManagerGameObject.transform.position = targetPosition2;
             // Move the deckManagerGameObject towards targetPosition2 using Translate
