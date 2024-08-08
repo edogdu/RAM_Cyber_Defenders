@@ -335,8 +335,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -958,18 +958,17 @@ MonoBehaviour:
   m_text: 'However, it takes a longer time to fully analyze them, but they might
     have done with examining the outdated versions.
 
-    Hackers might find the
-    vulnerability from the outdated version
+    Hackers might find the vulnerability
+    from the outdated version
 
 
-    3. Make a safe and complicated
-    password
+    3. Make a safe and complicated password
 
 
-    Why: If your 4-digit password consists of only numbers, hackers
-    can find out your password in 10*10*10*10 = 1000 trials. However, if you mix
-    numbers and the letters, then they must try 36*36*36*36 = 1,679,616 times to
-    figure out your password!
+    Why:
+    If your 4-digit password consists of only numbers, hackers can find out your
+    password in 10*10*10*10 = 1000 trials. However, if you mix numbers and the letters,
+    then they must try 36*36*36*36 = 1,679,616 times to figure out your password!
 
 '
   m_isRightToLeft: 0
@@ -980,8 +979,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
