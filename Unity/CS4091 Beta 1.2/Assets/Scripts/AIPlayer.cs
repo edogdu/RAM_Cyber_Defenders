@@ -73,12 +73,18 @@ public class AIPlayer : MonoBehaviour
             if (moving.transform.position != destination.transform.position)
             {
                 moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+				moving.transform.rotation = destination.transform.rotation;
             }
             else
             {
-                animationTrigger = false;
+
             }
         }
+		else
+		{
+			moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+			moving.transform.rotation = Quaternion.Euler(0, 270, 0);
+		}
     }
 
 // [ Trying to use this to set up the Socket parameter in the animator, but I'm having trouble getting it to work right ]
@@ -171,7 +177,7 @@ public class AIPlayer : MonoBehaviour
     {
         moving = movingObject;    // what is moving
         destination = arrival;    // where to go
-        animationTrigger = true;  // check the Update() function
+        //animationTrigger = true;  // check the Update() function
     }
 
     void MoveCardToWasteDeck(GameObject card)
@@ -214,10 +220,6 @@ public class AIPlayer : MonoBehaviour
             // pickUp = false;
             Debug.Log("Player 2's turn");
             //this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
-
-			//For now, I'll experiment with the card movement, by letting the animation event functions do it
-			//Removing this return should let the old method work
-			//yield break;
 
             if (cardInfo.GetColor() == 1)
             {
@@ -350,35 +352,30 @@ public class AIPlayer : MonoBehaviour
 	}
 
 	// I found that animations can have 'animation events' which can run a function when the animation 
-	// gets to this event, so I'm gonna try messing with that for now
+	// gets to this event, so right now the AI card movements are all controlled by these functions belows, 
+	// which the animations themselves will call
 	
 	public void GrabCard()
 	{
 		setForCardMoving(deckManagerGameObject, leftHand);
-		//deckManagerGameObject.transform.position = leftHand.transform.position;
+		animationTrigger = true;
 	}
 	
 	public void PlayCard()
 	{
 		if (cardInfo.GetPlayer() == 2)
 		{
+			animationTrigger = false;
+			
 			if (cardInfo.GetColor() == 1)
 			{
-	
 				GameObject firstAvailableSocket = FindFirstAvailableBlueSocket();
 				//got a blue card
 				Debug.LogError("try to attach at " + firstAvailableSocket);
 				if (firstAvailableSocket != null)
 				{
-				
 					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
-					//deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 				}
-				//else
-				//{
-				//    MoveCardToWasteDeck(deckManagerGameObject);
-				//}
-	
 			}
 			else if (cardInfo.GetColor() == 2)
 			{
@@ -386,15 +383,9 @@ public class AIPlayer : MonoBehaviour
 				//got a green card
 				if (firstAvailableSocket != null)
 				{
-					
-	
 					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
-					//deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 				}
-				//else
-				//{
-				//    MoveCardToWasteDeck(deckManagerGameObject);
-				//}
+				
 			}
 			else if (cardInfo.GetColor() == 3)
 			{
@@ -404,12 +395,8 @@ public class AIPlayer : MonoBehaviour
 				if (firstAvailableSocket != null)
 				{
 					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
-					//deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 				}
-				//else
-				//{
-				//    MoveCardToWasteDeck(deckManagerGameObject);
-				//}
+
 			}	
 		}
 	}
@@ -417,14 +404,12 @@ public class AIPlayer : MonoBehaviour
 	public void SwitchHands()
 	{
 		setForCardMoving(deckManagerGameObject, rightHand);
-		//deckManagerGameObject.transform.position = rightHand.transform.position;
 	}
 	
 	public void DiscardCard()
 	{
 		setForCardMoving(deckManagerGameObject, wastedDeck);
-		//deckManagerGameObject.transform.position = rightHand.transform.position;
-		//MoveCardToWasteDeck(deckManagerGameObject);
+		animationTrigger = false;
 	}
 	
 }
