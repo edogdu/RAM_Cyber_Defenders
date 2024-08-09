@@ -265,6 +265,7 @@ public class AIPlayer : MonoBehaviour
             {
                 GameObject firstAvailableSocket = FindFirstAvailableGreenSocket(cardInfo);
                 //got a green card
+				Debug.LogError("try to attach at " + firstAvailableSocket);
                 if (firstAvailableSocket != null)
                 {
                     if (cardInfo.GetSymbol() == 1)
@@ -376,7 +377,7 @@ public class AIPlayer : MonoBehaviour
 			{
 				GameObject firstAvailableSocket = FindFirstAvailableBlueSocket();
 				//got a blue card
-				Debug.LogError("try to attach at " + firstAvailableSocket);
+				//Debug.LogError("try to attach at " + firstAvailableSocket);
 				if (firstAvailableSocket != null)
 				{
 					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
@@ -386,6 +387,7 @@ public class AIPlayer : MonoBehaviour
 			{
 				GameObject firstAvailableSocket = FindFirstAvailableGreenSocket(cardInfo);
 				//got a green card
+				//Debug.LogError("try to attach at " + firstAvailableSocket);
 				if (firstAvailableSocket != null)
 				{
 					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
@@ -396,7 +398,7 @@ public class AIPlayer : MonoBehaviour
 			{
 				GameObject firstAvailableSocket = FindFirstAvailableRedSocket(cardInfo);
 				//got a red card
-				Debug.LogError("try to attach at " + firstAvailableSocket);
+				//Debug.LogError("try to attach at " + firstAvailableSocket);
 				if (firstAvailableSocket != null)
 				{
 					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
