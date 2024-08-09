@@ -357,8 +357,11 @@ public class AIPlayer : MonoBehaviour
 	
 	public void GrabCard()
 	{
-		setForCardMoving(deckManagerGameObject, leftHand);
-		animationTrigger = true;
+		if (cardInfo.GetPlayer() == 2)
+		{
+			setForCardMoving(deckManagerGameObject, leftHand);
+			animationTrigger = true;
+		}
 	}
 	
 	public void PlayCard()
@@ -403,12 +406,18 @@ public class AIPlayer : MonoBehaviour
 	
 	public void SwitchHands()
 	{
-		setForCardMoving(deckManagerGameObject, rightHand);
+		if (cardInfo.GetPlayer() == 2)
+		{
+			setForCardMoving(deckManagerGameObject, rightHand);
+		}
 	}
 	
 	public void DiscardCard()
 	{
-		setForCardMoving(deckManagerGameObject, wastedDeck);
+		if (cardInfo.GetPlayer() == 2)
+		{
+			setForCardMoving(deckManagerGameObject, wastedDeck);
+		}
 		animationTrigger = false;
 	}
 	
