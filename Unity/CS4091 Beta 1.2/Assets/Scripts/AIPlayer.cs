@@ -72,18 +72,20 @@ public class AIPlayer : MonoBehaviour
         {
             if (moving.transform.position != destination.transform.position)
             {
-                moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
-				moving.transform.rotation = destination.transform.rotation;
-            }
-            else
-            {
-
+				if (moving != null)
+				{
+					moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+					moving.transform.rotation = destination.transform.rotation;
+				}
             }
         }
 		else
 		{
-			moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
-			moving.transform.rotation = Quaternion.Euler(0, 270, 0);
+			if (moving != null)
+			{
+				moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+				moving.transform.rotation = Quaternion.Euler(0, 270, 0);
+			}
 		}
     }
 
@@ -246,7 +248,7 @@ public class AIPlayer : MonoBehaviour
                         cardString = "This is a private information card. It is an Asset Card. Private information like your password and credit card details are important to keep safe!";
                     }
 
-                    dialogueScript.Speech(cardString);
+                    //dialogueScript.Speech(cardString);
 
                     //setForCardMoving(deckManagerGameObject, firstAvailableSocket);
                     // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
@@ -254,7 +256,7 @@ public class AIPlayer : MonoBehaviour
                 else
                 {
                     cardString = "This is an Assets Card; however, I don't have room to place it. Unfortunate.";
-                    dialogueScript.Speech(cardString);
+                    //dialogueScript.Speech(cardString);
                     //MoveCardToWasteDeck(deckManagerGameObject);
                 }
 
@@ -282,7 +284,7 @@ public class AIPlayer : MonoBehaviour
                         cardString = "This is an Education card. It is a Defense Card. Learning about cybersecurity can help us better recognize attacks.";
                     }
 
-                    dialogueScript.Speech(cardString);
+                    //dialogueScript.Speech(cardString);
 
                     //setForCardMoving(deckManagerGameObject, firstAvailableSocket);
                     // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
@@ -290,7 +292,7 @@ public class AIPlayer : MonoBehaviour
                 else
                 {
                     cardString = "I got a defense card, however, there is no card to protect. Unfortunate.";
-                    dialogueScript.Speech(cardString);
+                    //dialogueScript.Speech(cardString);
                     //MoveCardToWasteDeck(deckManagerGameObject);
                 }
             }
@@ -322,7 +324,7 @@ public class AIPlayer : MonoBehaviour
                         cardString = "This is a Cyber Attack card. It is an Attack Card. I can destroy any card with a cyber attack card. Cyber attacks are dangerous.";
                     }
 
-                    dialogueScript.Speech(cardString);
+                    //dialogueScript.Speech(cardString);
 
                     //setForCardMoving(deckManagerGameObject, firstAvailableSocket);
                     // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
@@ -330,14 +332,14 @@ public class AIPlayer : MonoBehaviour
                 else
                 {
                     cardString = "I got a attack card, however, there is no card to attack. HAHA.";
-                    dialogueScript.Speech(cardString);
+                    //dialogueScript.Speech(cardString);
                     //MoveCardToWasteDeck(deckManagerGameObject);
                 }
             }
             else
             {
                 cardString = "I don't know what card this is. ???";
-                dialogueScript.Speech(cardString);
+                //dialogueScript.Speech(cardString);
                 //MoveCardToWasteDeck(deckManagerGameObject);
             }
         }
