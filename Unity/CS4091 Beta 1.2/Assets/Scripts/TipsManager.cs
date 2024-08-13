@@ -136,6 +136,8 @@ public class TipsManager : MonoBehaviour
 	[SerializeField] public GreenSocketCardHandler socketGA7;
 	[SerializeField] public GreenSocketCardHandler socketGA8;
 	
+	public CardsInformation currentCard;
+	
 	
 	int Tip1 = 0; // After a tip is shown, it's int will be changed to one, and it won't show again that game
 	int Tip2 = 0;
@@ -160,18 +162,22 @@ public class TipsManager : MonoBehaviour
 			DisabledTips.SetActive(true);
 		}
 		
-		// Check Player1 blue sockets to see if a green card can be used or not
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 2 
-			&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+		if (deckScript.currentDrawnCard != null)
 		{
-			if((socketP1.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP1.IsOccupied() == true) // Checks the first blue socket for a matching card to the drawn green card, and checks if the blue card is still there
-			|| (socketP2.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP2.IsOccupied() == true)
-			|| (socketP3.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP3.IsOccupied() == true)
-			|| (socketP4.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP4.IsOccupied() == true)
-			|| (socketP5.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP5.IsOccupied() == true)	
-			|| (socketP6.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP6.IsOccupied() == true)	
-			|| (socketP7.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP7.IsOccupied() == true)
-			|| (socketP8.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketP8.IsOccupied() == true))
+			currentCard = deckScript.currentDrawnCard.GetComponent<CardsInformation>();
+		}
+		
+		// Check Player1 blue sockets to see if a green card can be used or not
+		if(currentCard.GetColor() == 2 && currentCard.GetPlayer() == 1)
+		{
+			if((socketP1.GetCardType() == currentCard.GetSymbol() && socketP1.IsOccupied() == true) // Checks the first blue socket for a matching card to the drawn green card, and checks if the blue card is still there
+			|| (socketP2.GetCardType() == currentCard.GetSymbol() && socketP2.IsOccupied() == true)
+			|| (socketP3.GetCardType() == currentCard.GetSymbol() && socketP3.IsOccupied() == true)
+			|| (socketP4.GetCardType() == currentCard.GetSymbol() && socketP4.IsOccupied() == true)
+			|| (socketP5.GetCardType() == currentCard.GetSymbol() && socketP5.IsOccupied() == true)	
+			|| (socketP6.GetCardType() == currentCard.GetSymbol() && socketP6.IsOccupied() == true)	
+			|| (socketP7.GetCardType() == currentCard.GetSymbol() && socketP7.IsOccupied() == true)
+			|| (socketP8.GetCardType() == currentCard.GetSymbol() && socketP8.IsOccupied() == true))
 			{
 				PlayGreenCard(); // Function in the script that handles one of the Tips windows 
 			}
@@ -183,21 +189,20 @@ public class TipsManager : MonoBehaviour
 		}
 		
 		// Check Player2 / AI blue sockets to see if a red card can be used or not
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3 
-			&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+		if(currentCard.GetColor() == 3 && currentCard.GetPlayer() == 1)
 		{
-			if(socketA1.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() // Checks if Player1's red card matches the opponent's blue card (or lack of card) in the first opponent blue socket
-			|| socketA2.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol()
-			|| socketA3.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol()
-			|| socketA4.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol()
-			|| socketA5.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol()	
-			|| socketA6.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol()	
-			|| socketA7.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol()
-			|| socketA8.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol())
+			if(socketA1.GetCardType() == currentCard.GetSymbol() // Checks if Player1's red card matches the opponent's blue card (or lack of card) in the first opponent blue socket
+			|| socketA2.GetCardType() == currentCard.GetSymbol()
+			|| socketA3.GetCardType() == currentCard.GetSymbol()
+			|| socketA4.GetCardType() == currentCard.GetSymbol()
+			|| socketA5.GetCardType() == currentCard.GetSymbol()	
+			|| socketA6.GetCardType() == currentCard.GetSymbol()	
+			|| socketA7.GetCardType() == currentCard.GetSymbol()
+			|| socketA8.GetCardType() == currentCard.GetSymbol())
 			{
 				PlayRedCard();
 			} // Checks for a cyber attack card and if it can be used
-			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5 &&
+			else if(currentCard.GetSymbol() == 5 &&
 			  (socketA1.GetCardType() != 0 // A cyber attack can destroy any card, so this checks that the opponent's blue socket isn't empty
 			|| socketA2.GetCardType() != 0
 			|| socketA3.GetCardType() != 0
@@ -217,31 +222,31 @@ public class TipsManager : MonoBehaviour
 		
 		
 		// Hide any active tips and the Player1 card guide when it's the AI's / Player2's turn
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+		if(currentCard.GetPlayer() == 2)
 		{
 			HideTips();
 			HidePlayer1Guide();
 		}
 		
 		// Hide Player2 / AI's card guide when it's Player1's turn
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+		if(currentCard.GetPlayer() == 1)
 		{
 			HidePlayer2Guide();
 		}
 		
 		
 		// Check if the next Player1 card is a blue card for tips
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1 
-			&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+		if(currentCard.GetColor() == 1 
+			&& currentCard.GetPlayer() == 1)
 		{
 			PlayBlueCard();
 		}
 		
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+		if(currentCard.GetPlayer() == 1)
 		{
 			currentPlayer = 1;
 		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+		else if(currentCard.GetPlayer() == 2)
 		{
 			currentPlayer = 2;
 		}
@@ -261,43 +266,43 @@ public class TipsManager : MonoBehaviour
 		{
 			
 				// Check if the next Player1 card is a blue card for card guide
-				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1 
-					&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+				if(currentCard.GetColor() == 1 
+					&& currentCard.GetPlayer() == 1)
 				{
 					P1BlueGuide(); // Function in the script that show where blue cards can be placed
 				}
 				
 				// Next P1 card is Green
-				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 2 
-					&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+				if(currentCard.GetColor() == 2 
+					&& currentCard.GetPlayer() == 1)
 				{
 					P1GreenGuide();
 				}
 				
 				// Next P1 card is Red
-				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3 
-					&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1)
+				if(currentCard.GetColor() == 3 
+					&& currentCard.GetPlayer() == 1)
 				{
 					P1RedGuide();
 				}
 					
 				// Next AI / P2 card is Blue
-				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1 
-					&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+				if(currentCard.GetColor() == 1 
+					&& currentCard.GetPlayer() == 2)
 				{
 					P2BlueGuide();
 				}
 				
 				// Next AI / P2 card is Green
-				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 2 
-					&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+				if(currentCard.GetColor() == 2 
+					&& currentCard.GetPlayer() == 2)
 				{
 					P2GreenGuide();
 				}
 				
 				// Next AI / P2 card is Red
-				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3 
-					&& deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+				if(currentCard.GetColor() == 3 
+					&& currentCard.GetPlayer() == 2)
 				{
 					P2RedGuide();
 				}
@@ -519,7 +524,7 @@ public class TipsManager : MonoBehaviour
 	{
 		int guide = 0;
 		
-		if(socketP1.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP1.IsOccupied() == false) // Checks if drawn green card matches the undefensed blue card in the first socket
+		if(socketP1.GetCardType() == currentCard.GetSymbol() && socketGP1.IsOccupied() == false) // Checks if drawn green card matches the undefensed blue card in the first socket
 		{
 			if(socketP1.IsOccupied() == true) // Checks if the matching blue card is still there
 			{
@@ -532,7 +537,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP2.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP2.IsOccupied() == false)
+		if(socketP2.GetCardType() == currentCard.GetSymbol() && socketGP2.IsOccupied() == false)
 		{
 			if(socketP2.IsOccupied() == true)
 			{
@@ -545,7 +550,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP3.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP3.IsOccupied() == false)
+		if(socketP3.GetCardType() == currentCard.GetSymbol() && socketGP3.IsOccupied() == false)
 		{
 			if(socketP3.IsOccupied() == true)
 			{
@@ -558,7 +563,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP4.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP4.IsOccupied() == false)
+		if(socketP4.GetCardType() == currentCard.GetSymbol() && socketGP4.IsOccupied() == false)
 		{
 			if(socketP4.IsOccupied() == true)
 			{
@@ -571,7 +576,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP5.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP5.IsOccupied() == false)
+		if(socketP5.GetCardType() == currentCard.GetSymbol() && socketGP5.IsOccupied() == false)
 		{
 			if(socketP5.IsOccupied() == true)
 			{
@@ -584,7 +589,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP6.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP6.IsOccupied() == false)
+		if(socketP6.GetCardType() == currentCard.GetSymbol() && socketGP6.IsOccupied() == false)
 		{
 			if(socketP6.IsOccupied() == true)
 			{
@@ -597,7 +602,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP7.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP7.IsOccupied() == false)
+		if(socketP7.GetCardType() == currentCard.GetSymbol() && socketGP7.IsOccupied() == false)
 		{
 			if(socketP7.IsOccupied() == true)
 			{
@@ -610,7 +615,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketP8.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGP8.IsOccupied() == false)
+		if(socketP8.GetCardType() == currentCard.GetSymbol() && socketGP8.IsOccupied() == false)
 		{
 			if(socketP8.IsOccupied() == true)
 			{
@@ -634,7 +639,7 @@ public class TipsManager : MonoBehaviour
 	{
 		int guide = 0;
 		
-		if(socketA1.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA1.IsOccupied() == false)
+		if(socketA1.GetCardType() == currentCard.GetSymbol() && socketGA1.IsOccupied() == false)
 		{
 			if(socketA1.IsOccupied() == true)
 			{
@@ -647,7 +652,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA2.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA2.IsOccupied() == false)
+		if(socketA2.GetCardType() == currentCard.GetSymbol() && socketGA2.IsOccupied() == false)
 		{
 			if(socketA2.IsOccupied() == true)
 			{
@@ -660,7 +665,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA3.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA3.IsOccupied() == false)
+		if(socketA3.GetCardType() == currentCard.GetSymbol() && socketGA3.IsOccupied() == false)
 		{
 			if(socketA3.IsOccupied() == true)
 			{
@@ -673,7 +678,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA4.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA4.IsOccupied() == false)
+		if(socketA4.GetCardType() == currentCard.GetSymbol() && socketGA4.IsOccupied() == false)
 		{
 			if(socketA4.IsOccupied() == true)
 			{
@@ -686,7 +691,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA5.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA5.IsOccupied() == false)
+		if(socketA5.GetCardType() == currentCard.GetSymbol() && socketGA5.IsOccupied() == false)
 		{
 			if(socketA5.IsOccupied() == true)
 			{
@@ -699,7 +704,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA6.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA6.IsOccupied() == false)
+		if(socketA6.GetCardType() == currentCard.GetSymbol() && socketGA6.IsOccupied() == false)
 		{
 			if(socketA6.IsOccupied() == true)
 			{
@@ -712,7 +717,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA7.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA7.IsOccupied() == false)
+		if(socketA7.GetCardType() == currentCard.GetSymbol() && socketGA7.IsOccupied() == false)
 		{
 			if(socketA7.IsOccupied() == true)
 			{
@@ -725,7 +730,7 @@ public class TipsManager : MonoBehaviour
 			}
 		}
 		
-		if(socketA8.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() && socketGA8.IsOccupied() == false)
+		if(socketA8.GetCardType() == currentCard.GetSymbol() && socketGA8.IsOccupied() == false)
 		{
 			if(socketA8.IsOccupied() == true)
 			{
@@ -750,49 +755,49 @@ public class TipsManager : MonoBehaviour
 		int guide = 0;
 		
 		// If the first opponent's blue card matches your drawn red card (or you drew a cyber attack card) it will show that you can play that card
-		if(socketA1.IsOccupied() == true && (socketA1.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA1.IsOccupied() == true && (socketA1.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP1.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA2.IsOccupied() == true && (socketA2.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA2.IsOccupied() == true && (socketA2.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP2.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA3.IsOccupied() == true && (socketA3.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA3.IsOccupied() == true && (socketA3.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP3.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA4.IsOccupied() == true && (socketA4.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA4.IsOccupied() == true && (socketA4.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP4.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA5.IsOccupied() == true && (socketA5.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA5.IsOccupied() == true && (socketA5.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP5.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA6.IsOccupied() == true && (socketA6.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA6.IsOccupied() == true && (socketA6.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP6.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA7.IsOccupied() == true && (socketA7.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA7.IsOccupied() == true && (socketA7.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP7.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketA8.IsOccupied() == true && (socketA8.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketA8.IsOccupied() == true && (socketA8.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedP8.SetActive(true);
 			guide += 1;
@@ -809,49 +814,49 @@ public class TipsManager : MonoBehaviour
 	{
 		int guide = 0;
 		
-		if(socketP1.IsOccupied() == true && (socketP1.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP1.IsOccupied() == true && (socketP1.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA1.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP2.IsOccupied() == true && (socketP2.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP2.IsOccupied() == true && (socketP2.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA2.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP3.IsOccupied() == true && (socketP3.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP3.IsOccupied() == true && (socketP3.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA3.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP4.IsOccupied() == true && (socketP4.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP4.IsOccupied() == true && (socketP4.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA4.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP5.IsOccupied() == true && (socketP5.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP5.IsOccupied() == true && (socketP5.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA5.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP6.IsOccupied() == true && (socketP6.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP6.IsOccupied() == true && (socketP6.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA6.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP7.IsOccupied() == true && (socketP7.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP7.IsOccupied() == true && (socketP7.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA7.SetActive(true);
 			guide += 1;
 		}
 		
-		if(socketP8.IsOccupied() == true && (socketP8.GetCardType() == deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() || deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5))
+		if(socketP8.IsOccupied() == true && (socketP8.GetCardType() == currentCard.GetSymbol() || currentCard.GetSymbol() == 5))
 		{
 			RedA8.SetActive(true);
 			guide += 1;

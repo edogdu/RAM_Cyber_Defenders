@@ -26,91 +26,103 @@ public class CardsDrawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+		if (deckScript.currentDrawnCard != null)
 		{
-			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1) // Blue Asset Cards
-				BlueCard();
-			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 2) // Green Defense Cards
-				GreenCard();
-			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3) // Red Attack Cards
-				RedCard();
+			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+			{
+				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1) // Blue Asset Cards
+					BlueCard();
+				else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 2) // Green Defense Cards
+					GreenCard();
+				else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3) // Red Attack Cards
+					RedCard();
+			}
 		}
     }
 	
 	public void BlueCard()
 	{
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 1) // Cellphone
+		if (deckScript.currentDrawnCard != null)
 		{
-			HideAll();
-			CellPhone.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 2) // Computer
-		{
-			HideAll();
-			Computer.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 3) // Game Console
-		{
-			HideAll();
-			GameConsole.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 4) // Private Information
-		{
-			HideAll();
-			PrivateInfo.SetActive(true);
+			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 1) // Cellphone
+			{
+				HideAll();
+				CellPhone.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 2) // Computer
+			{
+				HideAll();
+				Computer.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 3) // Game Console
+			{
+				HideAll();
+				GameConsole.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 4) // Private Information
+			{
+				HideAll();
+				PrivateInfo.SetActive(true);
+			}
 		}
 	}
 	
 	public void GreenCard()
 	{
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 1) // Encryption
+		if (deckScript.currentDrawnCard != null)
 		{
-			HideAll();
-			Encryption.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 2) // Fire Wall
-		{
-			HideAll();
-			FireWall.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 3) // Anti Malware
-		{
-			HideAll();
-			AntiMalware.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 4) // Education
-		{
-			HideAll();
-			Education.SetActive(true);
+			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 1) // Encryption
+			{
+				HideAll();
+				Encryption.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 2) // Fire Wall
+			{
+				HideAll();
+				FireWall.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 3) // Anti Malware
+			{
+				HideAll();
+				AntiMalware.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 4) // Education
+			{
+				HideAll();
+				Education.SetActive(true);
+			}
 		}
 	}
 	
 	public void RedCard()
 	{
-		if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 1) // Wireless Attack
+		if (deckScript.currentDrawnCard != null)
 		{
-			HideAll();
-			WirelessAttack.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 2) //Hacker
-		{
-			HideAll();
-			Hacker.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 3) // Malware
-		{
-			HideAll();
-			Malware.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 4) // Phising
-		{
-			HideAll();
-			Phising.SetActive(true);
-		}
-		else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5) // CyberAttack
-		{
-			HideAll();
-			CyberAttack.SetActive(true);
+			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 1) // Wireless Attack
+			{
+				HideAll();
+				WirelessAttack.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 2) //Hacker
+			{
+				HideAll();
+				Hacker.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 3) // Malware
+			{
+				HideAll();
+				Malware.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 4) // Phising
+			{
+				HideAll();
+				Phising.SetActive(true);
+			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetSymbol() == 5) // CyberAttack
+			{
+				HideAll();
+				CyberAttack.SetActive(true);
+			}
 		}
 	}
 	

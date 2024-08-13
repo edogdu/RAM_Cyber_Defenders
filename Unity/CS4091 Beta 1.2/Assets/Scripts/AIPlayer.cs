@@ -51,10 +51,13 @@ public class AIPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("AIPlayer Update called");
+        //Debug.Log("AIPlayer Update called");
         deckManagerGameObject = deckManager.GetTopCard;
-        cardInfo = deckManagerGameObject.GetComponent<CardsInformation>();
-        //StartCoroutine(WaitToPlay());
+		if (deckManagerGameObject != null)
+		{
+			cardInfo = deckManagerGameObject.GetComponent<CardsInformation>();
+        }
+		//StartCoroutine(WaitToPlay());
         botHand = GameObject.FindWithTag("botHand");
 
         // card moving animation(to AI)
@@ -369,6 +372,8 @@ public class AIPlayer : MonoBehaviour
 	
 	public void PlayCard()
 	{
+		animator.ResetTrigger("PickUp");
+		
 		if (cardInfo.GetPlayer() == 2)
 		{
 			animationTrigger = false;
@@ -406,6 +411,7 @@ public class AIPlayer : MonoBehaviour
 
 			}	
 		}
+		animator.SetInteger("Waiting", 0);
 	}
 	
 	public void SwitchHands()
@@ -414,6 +420,7 @@ public class AIPlayer : MonoBehaviour
 		{
 			setForCardMoving(deckManagerGameObject, rightHand);
 		}
+		
 	}
 	
 	public void DiscardCard()
@@ -423,6 +430,13 @@ public class AIPlayer : MonoBehaviour
 			setForCardMoving(deckManagerGameObject, wastedDeck);
 		}
 		animationTrigger = false;
+		animator.ResetTrigger("PickUp");
+		animator.SetInteger("Waiting", 0);
+	}
+	
+	public void Idling()
+	{
+		animator.SetInteger("Waiting", animator.GetInteger("Waiting") + 1);
 	}
 	
 }
