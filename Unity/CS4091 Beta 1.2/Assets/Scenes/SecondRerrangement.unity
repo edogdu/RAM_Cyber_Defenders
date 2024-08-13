@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17709908, g: 0.22169966, b: 0.30396232, a: 1}
+  m_IndirectSpecularColor: {r: 0.17709924, g: 0.2217001, b: 0.3039631, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5712,12 +5712,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &331427890
 GameObject:
   m_ObjectHideFlags: 0
@@ -9777,12 +9777,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1001 &647690585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13142,7 +13142,6 @@ MonoBehaviour:
   cardInfo: {fileID: 0}
   wastedDeck: {fileID: 1615759382}
   messageWasted: {fileID: 1410507842}
-  speed: 1
   dialogueScript: {fileID: 1012640369}
 --- !u!95 &927374187
 Animator:
