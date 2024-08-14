@@ -31,7 +31,7 @@ public class CorrectingPostion : MonoBehaviour
             MoveToTopOfDeck();
         }
         // Check if the card is out of the table boundary in X-axis
-        else if (transform.position.x > tableUpX + 1 || transform.position.x < tableDownX)
+        else if (transform.position.x > tableUpX || transform.position.x < tableDownX)
         {
             MoveToTopOfDeck();
         }

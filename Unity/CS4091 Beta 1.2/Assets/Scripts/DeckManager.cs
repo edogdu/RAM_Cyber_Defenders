@@ -89,7 +89,6 @@ public class DeckManager : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         gameManager.determineWin();
-		aiplayer.GameEnd();
     }
 
 }

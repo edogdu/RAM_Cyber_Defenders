@@ -142,10 +142,10 @@ Material:
     - _Base_Color_Top: {r: 0.3679245, g: 0.35577607, b: 0.35577607, a: 1}
     - _Dirt_Color: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
     - _Emission_Color: {r: 8, g: 2.6288996, b: 0, a: 0}
-    - _Side_Color: {r: 0.2862745, g: 0.2862745, b: 0.2862745, a: 0}
+    - _Side_Color: {r: 0.42993504, g: 0.8066038, b: 0.76063824, a: 0}
     - _Side_Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Sides_Color: {r: 0.36862746, g: 0.35686275, b: 0.35686275, a: 0}
     - _Sides_Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Top_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0}
+    - _Top_Color: {r: 0.41273585, g: 0.8254717, b: 0.791198, a: 0}
     - _Top_Offset: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

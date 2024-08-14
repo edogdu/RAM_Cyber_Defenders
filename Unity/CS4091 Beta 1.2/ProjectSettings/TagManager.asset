@@ -21,6 +21,8 @@ TagManager:
   - botHand
   - Table
   - Deck
+  - RoomLight
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
@@ -32,8 +34,8 @@ TagManager:
   - Green
   - Red
   - RedPlayer2
-  - 
-  - 
+  - Player
+  - Button
   - 
   - 
   - 
