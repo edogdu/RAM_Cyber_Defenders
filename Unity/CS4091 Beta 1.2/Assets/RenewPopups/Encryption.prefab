@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3073496649529796855}
   m_Layer: 0
-  m_Name: Done_Encryption
+  m_Name: Encryption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

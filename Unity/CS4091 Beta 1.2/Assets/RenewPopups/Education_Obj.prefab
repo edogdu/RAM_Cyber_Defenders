@@ -1401,7 +1401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8199404486605213793}
   m_Layer: 0
-  m_Name: Done_Education_Obj
+  m_Name: Education_Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

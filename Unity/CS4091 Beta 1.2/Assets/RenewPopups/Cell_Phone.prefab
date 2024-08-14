@@ -359,7 +359,7 @@ GameObject:
   m_Component:
   - component: {fileID: 602246866365234800}
   m_Layer: 0
-  m_Name: Done_Only_Cell_Phone
+  m_Name: Cell_Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2638459891972567382}
   m_Layer: 0
-  m_Name: Done_Cell_with_Encryp
+  m_Name: Cell_with_Encryp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

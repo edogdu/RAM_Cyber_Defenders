@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 608459281394686010}
   m_Layer: 0
-  m_Name: Done_Only_Gaming_Console
+  m_Name: Gaming_Console
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

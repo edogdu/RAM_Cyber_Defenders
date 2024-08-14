@@ -399,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5498952758890836101}
   m_Layer: 0
-  m_Name: Done_Console_with_Anti
+  m_Name: Console_with_Anti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

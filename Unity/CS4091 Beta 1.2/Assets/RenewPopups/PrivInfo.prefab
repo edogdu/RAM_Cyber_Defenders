@@ -577,7 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8852252211228867513}
   m_Layer: 0
-  m_Name: Done_Only_PrivInfo
+  m_Name: PrivInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
