@@ -7,11 +7,11 @@ public class MenuController : MonoBehaviour
 {
     public void StartBtn()
 	{
-		SceneManager.LoadScene("ThirdArrangement");
+		SceneManager.LoadScene("SingleMode");
 	}
 	public void MenuBtn()
 	{
-		SceneManager.LoadScene("MainMenu");
+		SceneManager.LoadScene("ThirdArrangement");
 	}
 	public void QuitBtn()
 	{
