@@ -41,7 +41,7 @@ public class ButtonToMulti: MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene("MultiMode");
+        SceneManager.LoadScene("1_TypeNickname");
     }
 
     // Update is called once per frame
