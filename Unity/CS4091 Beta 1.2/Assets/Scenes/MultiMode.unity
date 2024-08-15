@@ -312,12 +312,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Board: {fileID: 1774010167}
   Pause: {fileID: 1570390701}
+  CardsGuide: {fileID: 151941458}
   PlayAgainButton: {fileID: 317932729}
+  GuidesButton: {fileID: 689653924}
+  NeutralBackground: {fileID: 664600708}
+  WinningBackground: {fileID: 365676917}
+  Winning2Background: {fileID: 1023765212}
+  LosingBackground: {fileID: 1750416821}
+  Losing2Background: {fileID: 1524492457}
   WinBackground: {fileID: 251412191}
   TieBackground: {fileID: 151973604}
   LoseBackground: {fileID: 1328886721}
   displayPlayerScore: {fileID: 845431770}
   displayAIScore: {fileID: 2006428783}
+  socketP1: {fileID: 1187549667}
+  socketP2: {fileID: 204713419}
+  socketP3: {fileID: 1600455145}
+  socketP4: {fileID: 848558266}
+  socketP5: {fileID: 2098280833}
+  socketP6: {fileID: 2035273820}
+  socketP7: {fileID: 1954865175}
+  socketP8: {fileID: 2006994522}
+  socketA1: {fileID: 1966582485}
+  socketA2: {fileID: 1622028015}
+  socketA3: {fileID: 1093004771}
+  socketA4: {fileID: 1153503674}
+  socketA5: {fileID: 1571513337}
+  socketA6: {fileID: 328131678}
+  socketA7: {fileID: 155840748}
+  socketA8: {fileID: 642204537}
   decidedTurn: 0
 --- !u!4 &13155959
 Transform:
@@ -1908,7 +1931,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48570934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.127}
+  m_LocalPosition: {x: 0, y: 0, z: 0.13}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1916,7 +1939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -74.5, y: 45.1}
+  m_AnchoredPosition: {x: -75.6, y: 45.1}
   m_SizeDelta: {x: 216.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48570936
@@ -1939,7 +1962,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Player
+  m_text: Player 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1966,8 +1989,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4184,8 +4207,70 @@ MonoBehaviour:
   PlayBlue: {fileID: 1008064851}
   PlayGreen: {fileID: 1317163227}
   PlayRed: {fileID: 1337944460}
-  DisableButton: {fileID: 0}
+  DisableTipsButton: {fileID: 1769169859}
+  DisabledTips: {fileID: 108872937}
+  ToggleOffButton: {fileID: 1228206333}
+  ToggleOnButton: {fileID: 1873909394}
+  AlwaysGuideButton: {fileID: 389971278}
+  NotAlwaysGuideButton: {fileID: 1987481658}
+  ControllerModel1: {fileID: 1909023091}
+  ControllerModel2: {fileID: 1763658213}
+  ControllerModel3: {fileID: 1770392322}
+  ControllerModel4: {fileID: 1376044604}
   deckScript: {fileID: 1564654435}
+  boxTrigger: {fileID: 262606466}
+  BlueP1: {fileID: 790143945}
+  BlueP2: {fileID: 369868142}
+  BlueP3: {fileID: 2000871757}
+  BlueP4: {fileID: 326132761}
+  BlueP5: {fileID: 503593359}
+  BlueP6: {fileID: 92697653}
+  BlueP7: {fileID: 2124770561}
+  BlueP8: {fileID: 1361226928}
+  BlueA1: {fileID: 1559716270}
+  BlueA2: {fileID: 1187913139}
+  BlueA3: {fileID: 2102787207}
+  BlueA4: {fileID: 642514051}
+  BlueA5: {fileID: 1446349866}
+  BlueA6: {fileID: 1538390090}
+  BlueA7: {fileID: 2130004768}
+  BlueA8: {fileID: 522184381}
+  GreenP1: {fileID: 506250276}
+  GreenP2: {fileID: 17922567}
+  GreenP3: {fileID: 1636258823}
+  GreenP4: {fileID: 1489102207}
+  GreenP5: {fileID: 2086340352}
+  GreenP6: {fileID: 1165470098}
+  GreenP7: {fileID: 1557120971}
+  GreenP8: {fileID: 137775612}
+  GreenA1: {fileID: 1016935632}
+  GreenA2: {fileID: 1703477935}
+  GreenA3: {fileID: 234178088}
+  GreenA4: {fileID: 145546377}
+  GreenA5: {fileID: 843233631}
+  GreenA6: {fileID: 1893179866}
+  GreenA7: {fileID: 1648738324}
+  GreenA8: {fileID: 1817329809}
+  RedP1: {fileID: 41867088}
+  RedP2: {fileID: 1613741983}
+  RedP3: {fileID: 1592618185}
+  RedP4: {fileID: 1778430740}
+  RedP5: {fileID: 2022785519}
+  RedP6: {fileID: 1916752479}
+  RedP7: {fileID: 1094157863}
+  RedP8: {fileID: 1961357011}
+  RedA1: {fileID: 2015072704}
+  RedA2: {fileID: 921705684}
+  RedA3: {fileID: 1757695761}
+  RedA4: {fileID: 2064288944}
+  RedA5: {fileID: 657864679}
+  RedA6: {fileID: 400210981}
+  RedA7: {fileID: 1468379578}
+  RedA8: {fileID: 1775791086}
+  DiscardP1: {fileID: 1564453496}
+  DiscardP2: {fileID: 1564453496}
+  Discard1: {fileID: 211621863}
+  Discard2: {fileID: 1993331167}
   socketP1: {fileID: 1187549667}
   socketP2: {fileID: 204713419}
   socketP3: {fileID: 1600455145}
@@ -4202,6 +4287,23 @@ MonoBehaviour:
   socketA6: {fileID: 328131678}
   socketA7: {fileID: 155840748}
   socketA8: {fileID: 642204537}
+  socketGP1: {fileID: 431477174}
+  socketGP2: {fileID: 569659404}
+  socketGP3: {fileID: 1496298004}
+  socketGP4: {fileID: 562345749}
+  socketGP5: {fileID: 191323395}
+  socketGP6: {fileID: 147787225}
+  socketGP7: {fileID: 98009296}
+  socketGP8: {fileID: 1020524090}
+  socketGA1: {fileID: 1690645346}
+  socketGA2: {fileID: 482058065}
+  socketGA3: {fileID: 1062465635}
+  socketGA4: {fileID: 1848662749}
+  socketGA5: {fileID: 1316787081}
+  socketGA6: {fileID: 1672268222}
+  socketGA7: {fileID: 23224115}
+  socketGA8: {fileID: 684189409}
+  currentCard: {fileID: 0}
 --- !u!1 &117328977
 GameObject:
   m_ObjectHideFlags: 0
@@ -14645,7 +14747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.5, y: -36.6}
+  m_AnchoredPosition: {x: 4.5, y: -32.6}
   m_SizeDelta: {x: 390.63, y: 177.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &412808075
@@ -28010,7 +28112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805163796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31661,6 +31763,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botHand: {fileID: 222357621}
+  leftHand: {fileID: 1190118268}
+  rightHand: {fileID: 518407194}
   deckManagerGameObject: {fileID: 0}
   gameManager: {fileID: 0}
   deckManager: {fileID: 0}
@@ -43873,6 +43977,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1376044602}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1376044604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11cd62256b1d470f922b2c8e6446cc77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1376044602}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1376704370
 GameObject:
   m_ObjectHideFlags: 0
@@ -44449,7 +44559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.800055, y: 11.733326}
+  m_AnchoredPosition: {x: -20.800055, y: 13.3}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1409380128
@@ -47901,7 +48011,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527706758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.127}
+  m_LocalPosition: {x: 0, y: 0, z: 0.13}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47909,7 +48019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54.1, y: 43.69998}
+  m_AnchoredPosition: {x: 31.8, y: 43.69998}
   m_SizeDelta: {x: 182.2, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1527706760
@@ -47932,7 +48042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AI
+  m_text: Player2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -47959,8 +48069,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 54
+  m_fontSizeBase: 54
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -58547,6 +58657,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1770392320}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1770392322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11cd62256b1d470f922b2c8e6446cc77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1770392320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1771142745
 GameObject:
   m_ObjectHideFlags: 0
@@ -63555,7 +63671,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 11cd62256b1d470f922b2c8e6446cc77,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4484649728117633534, guid: 11cd62256b1d470f922b2c8e6446cc77,
         type: 3}
@@ -63570,6 +63686,12 @@ PrefabInstance:
 --- !u!4 &1909023090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11cd62256b1d470f922b2c8e6446cc77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1909023089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909023091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11cd62256b1d470f922b2c8e6446cc77,
     type: 3}
   m_PrefabInstance: {fileID: 1909023089}
   m_PrefabAsset: {fileID: 0}
@@ -67792,7 +67914,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7, y: 32.2}
+  m_AnchoredPosition: {x: 3.7, y: 33.5}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2017865040
