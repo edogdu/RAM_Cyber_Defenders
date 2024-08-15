@@ -8072,10 +8072,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'If you don''t have a matching blue card to defend, you must discard that
-    card.
-
-    Use the control stick to slide the card towards the discard pile'
+  m_text: "If you don't have a matching blue card to defend, you must \ndiscard that
+    card.\nUse the control stick to slide the card towards the discard pile"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46d4660eedeaf406995fa1afed253fe0, type: 2}
   m_sharedMaterial: {fileID: 4501733103922136834, guid: 46d4660eedeaf406995fa1afed253fe0,
@@ -42012,7 +42010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Place the green card in front of a  blue card of the same type. \nUse
+  m_text: "Place the green card in front of a \nblue card of the same type. \nUse
     the control stick to slide the card in front of the right blue card"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46d4660eedeaf406995fa1afed253fe0, type: 2}
@@ -43508,7 +43506,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54736,11 +54734,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'If the AI doesn''t have a matching card to play a red card against, you
-    must discard that card.
-
-    Use the control stick to slide the card towards
-    the discard pile'
+  m_text: "If the AI doesn't have a matching card to play a red card against, \nyou
+    must discard that card.\nUse the control stick to slide the card towards the
+    discard pile"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46d4660eedeaf406995fa1afed253fe0, type: 2}
   m_sharedMaterial: {fileID: 4501733103922136834, guid: 46d4660eedeaf406995fa1afed253fe0,

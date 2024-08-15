@@ -4,12 +4,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class BlueCardGrabInteraction : XRGrabInteractable
 {
     public GameObject hiddenModel;
+	public GameObject hiddenModel2;
     private bool hasBeenPlaced = false;
-    private XRSocketCardHandler currentSocket; // Keep track of the current socket
+    public XRSocketCardHandler currentSocket; // Keep track of the current socket
+	//private GreenSocketCardHandler greenSocket;
+	private GameObject currentGreenSocket;
     private Rigidbody rb;
     private CardsInformation cardInfo;
     private GameManager gameManager;
     private DeckManager deckManager;
+	
+	private int socketNumber = 0;
     
     void Start()
     {
@@ -17,6 +22,28 @@ public class BlueCardGrabInteraction : XRGrabInteractable
         cardInfo = GetComponent<CardsInformation>();
         deckManager = FindObjectOfType<DeckManager>();
     }
+
+	void Update()
+	{
+		if(hasBeenPlaced == true)
+		{
+			if(currentGreenSocket.GetComponent<GreenSocketCardHandler>().IsOccupied() == true)
+			{
+				hiddenModel.SetActive(false);
+				hiddenModel2.SetActive(true);
+			}
+			else
+			{
+				hiddenModel.SetActive(true);
+				hiddenModel2.SetActive(false);
+			}
+		}
+		else
+		{
+			hiddenModel.SetActive(false);
+			hiddenModel2.SetActive(false);
+		}
+	}
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -59,6 +86,86 @@ public class BlueCardGrabInteraction : XRGrabInteractable
                     //rb.constraints = RigidbodyConstraints.FreezeRotation;
                     //rb.constraints = RigidbodyConstraints.FreezeScale;
                 }
+				
+				// Find the corresponding green socket
+				// This method is pretty inefficient, but it works
+				
+				string socketName = currentSocket.ToString();
+				char name = socketName[8];
+				socketNumber = name - '0';
+				
+				if(name != 'P')
+				{
+					if(name == '1')
+					{
+						currentGreenSocket = GameObject.Find("G_socket1");
+					}
+					else if(name == '2')
+					{
+						currentGreenSocket = GameObject.Find("G_socket2");
+					}
+					else if(name == '3')
+					{
+						currentGreenSocket = GameObject.Find("G_socket3");
+					}
+					else if(name == '4')
+					{
+						currentGreenSocket = GameObject.Find("G_socket4");
+					}
+					else if(name == '5')
+					{
+						currentGreenSocket = GameObject.Find("G_socket5");
+					}
+					else if(name == '6')
+					{
+						currentGreenSocket = GameObject.Find("G_socket6");
+					}
+					else if(name == '7')
+					{
+						currentGreenSocket = GameObject.Find("G_socket7");
+					}
+					else if(name == '8')
+					{
+						currentGreenSocket = GameObject.Find("G_socket8");
+					}
+				}
+				else
+				{
+					name = socketName[9];
+					socketNumber = name - '0';
+					if(name == '1')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP1");
+					}
+					else if(name == '2')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP2");
+					}
+					else if(name == '3')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP3");
+					}
+					else if(name == '4')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP4");
+					}
+					else if(name == '5')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP5");
+					}
+					else if(name == '6')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP6");
+					}
+					else if(name == '7')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP7");
+					}
+					else if(name == '8')
+					{
+						currentGreenSocket = GameObject.Find("G_socketP8");
+					}
+				}
             }
         }
     }
