@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class AIPlayer : MonoBehaviour
     //[SerializeField] private GameObject cardPostion;
     private Animator animator;
     [SerializeField] private GameObject botHand;
+	[SerializeField] private GameObject leftHand;
+	[SerializeField] private GameObject rightHand;
     [SerializeField] private GameObject deckManagerGameObject;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private DeckManager deckManager;
@@ -16,12 +19,21 @@ public class AIPlayer : MonoBehaviour
     private GameObject[] redSockets; // Store references to green sockets
     [SerializeField] private GameObject wastedDeck;
     public MessageWasted messageWasted;
-    public float speed = 1.0f;
+    //public float speed = 1.0f;
     bool pickUp = false;
     //private Vector3 targetPosition2;
     string cardString = "Your dialogue text here";
     //dialogue  text box from ai
     [SerializeField] public Dialogue dialogueScript;
+
+    // needed for card moving animation
+    private GameObject moving;
+    private GameObject destination;
+    private float speed = 0.03f;
+    private bool animationTrigger = false;
+	
+	private int socketNumber = 0;
+	//private int cardColor = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -45,29 +57,70 @@ public class AIPlayer : MonoBehaviour
         //StartCoroutine(WaitToPlay());
         botHand = GameObject.FindWithTag("botHand");
 
+        // card moving animation(to AI)
+        
         if (pickUp == true)
         {
 
-            deckManagerGameObject.transform.position = botHand.transform.position;
+            botHand.transform.position = deckManagerGameObject.transform.position;
+            pickUp = false;
+            animationTrigger = true;
         }
+
+        // card moving animation(from AI)
+        if (animationTrigger == true)
+        {
+            if (moving.transform.position != destination.transform.position)
+            {
+                moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+				moving.transform.rotation = destination.transform.rotation;
+            }
+            else
+            {
+
+            }
+        }
+		else
+		{
+			if (moving != null)
+			{
+				moving.transform.position = Vector3.MoveTowards(moving.transform.position, destination.transform.position, speed);
+				moving.transform.rotation = Quaternion.Euler(0, 270, 0);
+			}
+		}
     }
 
+// [ Trying to use this to set up the Socket parameter in the animator, but I'm having trouble getting it to work right ]
     GameObject FindFirstAvailableBlueSocket()
     {
-
+		animator.SetInteger("Color", 1);
+		
         foreach (GameObject socket in blueSockets)
         {
             XRSocketCardHandler socketHandler = socket.GetComponent<XRSocketCardHandler>();
             if (socketHandler != null && !socketHandler.IsOccupied())
             {
+				
+				string socketName = socket.ToString();
+				char name = socketName[9];
+				
+				socketNumber = name - '0';
+				
+				
+				animator.SetInteger("Socket", socketNumber);
+				
                 return socket;
             }
         }
+		
+		animator.SetInteger("Socket", 0);
+		
         return null; // No available blue socket found
     }
 
     GameObject FindFirstAvailableGreenSocket(CardsInformation cardInfo)
     {
+		animator.SetInteger("Color", 2);
 
         greenSockets = GameObject.FindGameObjectsWithTag("GreenSocketPlayer2");
         Debug.Log("Number of green sockets found: " + greenSockets.Length);
@@ -76,14 +129,26 @@ public class AIPlayer : MonoBehaviour
             GreenSocketCardHandler socketHandler = socket.GetComponent<GreenSocketCardHandler>();
             if (socketHandler != null && !socketHandler.IsOccupied() && cardInfo.GetSymbol() == socketHandler.GetCardType())
             {
+				string socketName = socket.ToString();
+				char name = socketName[9];
+				
+				socketNumber = name - '0';
+				
+				
+				animator.SetInteger("Socket", socketNumber);
+				
                 return socket;
             }
         }
+		
+		animator.SetInteger("Socket", 0);
+		
         return null; // No available green socket found
     }
 
     GameObject FindFirstAvailableRedSocket(CardsInformation cardInfo)
     {
+		animator.SetInteger("Color", 3);
 
         redSockets = GameObject.FindGameObjectsWithTag("RedSocketPlayer2");
         Debug.Log("Number of red sockets found: " + redSockets.Length);
@@ -92,23 +157,38 @@ public class AIPlayer : MonoBehaviour
             RedSocketPlayer2 socketHandler = socket.GetComponent<RedSocketPlayer2>();
             if (socketHandler != null && (cardInfo.GetSymbol() == socketHandler.GetCardType() || cardInfo.GetSymbol() == 5))
             {
+				
+				string socketName = socket.ToString();
+				char name = socketName[9];
+				
+				socketNumber = name - '0';
+				
+				
+				animator.SetInteger("Socket", socketNumber);
+				
                 return socket;
             }
         }
+		
+		animator.SetInteger("Socket", 0);
+		
         return null; // No available red socket found
+    }
+    
+    // function for card moving animation; check Update() function to see further process
+    void setForCardMoving(GameObject movingObject, GameObject arrival)
+    {
+        moving = movingObject;    // what is moving
+        destination = arrival;    // where to go
+        //animationTrigger = true;  // check the Update() function
     }
 
     void MoveCardToWasteDeck(GameObject card)
     {
         if (wastedDeck != null && card != null)
         {
-            /*
-            if (messageWasted != null)
-            {
-                messageWasted.increaseCount();
-            }
-            */
-            card.transform.position = wastedDeck.transform.position;
+            setForCardMoving(card, wastedDeck);
+            //card.transform.position = wastedDeck.transform.position;
         }
     }
 
@@ -119,7 +199,8 @@ public class AIPlayer : MonoBehaviour
     public IEnumerator WaitToPlay()
     {
         yield return new WaitForSeconds(1);
-        if (cardInfo.GetPlayer() == 2)
+     
+		if (cardInfo.GetPlayer() == 2)
         {
             Rigidbody rb = deckManagerGameObject.GetComponent<Rigidbody>();
             if (rb != null)
@@ -129,16 +210,20 @@ public class AIPlayer : MonoBehaviour
                 //rb.isKinematic = true;
             }
             //dialogueScript.Speech(cardString);
+			
             // Move the deckManagerGameObject towards targetPosition using Translate
             //deckManagerGameObject.transform.position = targetPosition2;
             // Move the deckManagerGameObject towards targetPosition2 using Translate
-            pickUp = true;
-            yield return new WaitForSeconds(1);
+
+            // pickUp = true;
+            //yield return new WaitForSeconds(1);
             animator.SetTrigger("PickUp");
             yield return new WaitForSeconds(1);
-            pickUp = false;
+		
+            // pickUp = false;
             Debug.Log("Player 2's turn");
             //this.interactionLayers = InteractionLayerMask.GetMask("Uninteractable");
+
             if (cardInfo.GetColor() == 1)
             {
 
@@ -165,13 +250,15 @@ public class AIPlayer : MonoBehaviour
                     }
 
                     dialogueScript.Speech(cardString);
-                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
+
+                    //setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+                    // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
                     cardString = "This is an Assets Card; however, I don't have room to place it. Unfortunate.";
                     dialogueScript.Speech(cardString);
-                    MoveCardToWasteDeck(deckManagerGameObject);
+                    //MoveCardToWasteDeck(deckManagerGameObject);
                 }
 
             }
@@ -199,13 +286,15 @@ public class AIPlayer : MonoBehaviour
                     }
 
                     dialogueScript.Speech(cardString);
-                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
+
+                    //setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+                    // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
                     cardString = "I got a defense card, however, there is no card to protect. Unfortunate.";
                     dialogueScript.Speech(cardString);
-                    MoveCardToWasteDeck(deckManagerGameObject);
+                    //MoveCardToWasteDeck(deckManagerGameObject);
                 }
             }
             else if (cardInfo.GetColor() == 3)
@@ -237,27 +326,103 @@ public class AIPlayer : MonoBehaviour
                     }
 
                     dialogueScript.Speech(cardString);
-                    deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
 
+                    //setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+                    // deckManagerGameObject.transform.position = firstAvailableSocket.transform.position;
                 }
                 else
                 {
                     cardString = "I got a attack card, however, there is no card to attack. HAHA.";
                     dialogueScript.Speech(cardString);
-                    MoveCardToWasteDeck(deckManagerGameObject);
+                    //MoveCardToWasteDeck(deckManagerGameObject);
                 }
             }
             else
             {
                 cardString = "I don't know what card this is. ???";
                 dialogueScript.Speech(cardString);
-                MoveCardToWasteDeck(deckManagerGameObject);
+                //MoveCardToWasteDeck(deckManagerGameObject);
             }
         }
 
     }
 
+	public void GameEnd()
+	{
+		int i = gameManager.WhoWon();
+		
+		animator.SetInteger("Game End", i);
+	}
 
+	// I found that animations can have 'animation events' which can run a function when the animation 
+	// gets to this event, so right now the AI card movements are all controlled by these functions belows, 
+	// which the animations themselves will call
+	
+	public void GrabCard()
+	{
+		if (cardInfo.GetPlayer() == 2)
+		{
+			setForCardMoving(deckManagerGameObject, leftHand);
+			animationTrigger = true;
+		}
+	}
+	
+	public void PlayCard()
+	{
+		if (cardInfo.GetPlayer() == 2)
+		{
+			animationTrigger = false;
+			
+			if (cardInfo.GetColor() == 1)
+			{
+				GameObject firstAvailableSocket = FindFirstAvailableBlueSocket();
+				//got a blue card
+				Debug.LogError("try to attach at " + firstAvailableSocket);
+				if (firstAvailableSocket != null)
+				{
+					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+				}
+			}
+			else if (cardInfo.GetColor() == 2)
+			{
+				GameObject firstAvailableSocket = FindFirstAvailableGreenSocket(cardInfo);
+				//got a green card
+				if (firstAvailableSocket != null)
+				{
+					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+				}
+				
+			}
+			else if (cardInfo.GetColor() == 3)
+			{
+				GameObject firstAvailableSocket = FindFirstAvailableRedSocket(cardInfo);
+				//got a red card
+				Debug.LogError("try to attach at " + firstAvailableSocket);
+				if (firstAvailableSocket != null)
+				{
+					setForCardMoving(deckManagerGameObject, firstAvailableSocket);
+				}
 
+			}	
+		}
+	}
+	
+	public void SwitchHands()
+	{
+		if (cardInfo.GetPlayer() == 2)
+		{
+			setForCardMoving(deckManagerGameObject, rightHand);
+		}
+	}
+	
+	public void DiscardCard()
+	{
+		if (cardInfo.GetPlayer() == 2)
+		{
+			setForCardMoving(deckManagerGameObject, wastedDeck);
+		}
+		animationTrigger = false;
+	}
+	
 }
 

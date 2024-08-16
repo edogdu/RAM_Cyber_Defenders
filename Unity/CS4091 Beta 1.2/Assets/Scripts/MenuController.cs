@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void StartBtn()
 	{
-		SceneManager.LoadScene("SecondRerrangement");
+		SceneManager.LoadScene("Hub");
 	}
 	public void MenuBtn()
 	{

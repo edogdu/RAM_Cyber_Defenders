@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: a1de6ceadfcb41d4bb58aa36eda5e38f
   - enabled: 1
-    path: Assets/Scenes/SecondRerrangement.unity
+    path: Assets/Scenes/SinglePlayer.unity
     guid: 70b045d5285ad9f4b9a7ce28e237a63e
+  - enabled: 1
+    path: Assets/Scenes/Hub.unity
+    guid: a8c2ff555ac4a6f46a72767d54155d9b
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
