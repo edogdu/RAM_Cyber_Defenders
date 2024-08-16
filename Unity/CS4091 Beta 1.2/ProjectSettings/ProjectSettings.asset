@@ -142,8 +142,6 @@ PlayerSettings:
   bundleVersion: 0.6
   preloadedAssets:
   - {fileID: 11400000, guid: ca20296ebc7e14645ae66abddb732d8f, type: 2}
-  - {fileID: -8205607724562600155, guid: 87b4948144e55fa4a9be35deff092fc1, type: 2}
-  - {fileID: 11400000, guid: 74778e824a568484291cc14f41b41e73, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -276,7 +274,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180

@@ -1636,6 +1636,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Padlock
       objectReference: {fileID: 0}
+    - target: {fileID: 5270815645217170498, guid: 0b4e1ea0f7fdd934686185d5e9af082f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d87aeed3f07b1554cb9cf469b26633e5, type: 2}
+    - target: {fileID: 7388433568921467437, guid: 0b4e1ea0f7fdd934686185d5e9af082f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47dc5a096e1063a47b2d9afb0ecc8e75, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
