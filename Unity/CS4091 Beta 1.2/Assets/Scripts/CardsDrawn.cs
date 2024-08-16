@@ -21,6 +21,7 @@ public class CardsDrawn : MonoBehaviour
 	[SerializeField] public GameObject Malware;
 	[SerializeField] public GameObject Phising;
 	[SerializeField] public GameObject CyberAttack;
+	public int Screen; 
 	
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class CardsDrawn : MonoBehaviour
     {
 		if (deckScript.currentDrawnCard != null)
 		{
-			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2)
+			if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 1 && Screen == 1)
 			{
 				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1) // Blue Asset Cards
 					BlueCard();
@@ -37,6 +38,15 @@ public class CardsDrawn : MonoBehaviour
 				else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3) // Red Attack Cards
 					RedCard();
 			}
+			else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetPlayer() == 2 && Screen == 2)
+			{
+				if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 1) // Blue Asset Cards
+					BlueCard();
+				else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 2) // Green Defense Cards
+					GreenCard();
+				else if(deckScript.currentDrawnCard.GetComponent<CardsInformation>().GetColor() == 3) // Red Attack Cards
+					RedCard();
+			}	
 		}
     }
 	
