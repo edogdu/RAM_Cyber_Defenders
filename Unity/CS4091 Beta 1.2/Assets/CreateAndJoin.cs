@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CreateAndJoin : MonoBehaviourPunCallbacks
 {
@@ -23,5 +24,10 @@ public class CreateAndJoin : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("MultiMode");
+    }
+
+    public void backToLobby()
+    {
+        SceneManager.LoadScene("ThirdArrangement");
     }
 }

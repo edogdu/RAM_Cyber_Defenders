@@ -16,4 +16,8 @@ public class KeepNickname : MonoBehaviour
         SceneManager.LoadScene("2_Connecting");
     }
 
+    public void backToLobby()
+    {
+        SceneManager.LoadScene("ThirdArrangement");
+    }
 }
