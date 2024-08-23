@@ -18,6 +18,7 @@ A cutting-edge cybersecurity card game using virtual reality (VR) technologies w
 - **Interactive Gameplay:** Engage in interactive gameplay mechanics tailored to teach important cybersecurity concepts, such as understanding attack, defense, and Assets.
 - **Educational Content:** Gameplay with a focus on real-world cybersecurity scenarios.
 - **Single Player Gameplay:** AI opponent for fun and competitive gameplay.
+- **Multiplayer Gameplay:** In progress...
 - **VR Control Support:** User-friendly interface and intuitive controls for VR platforms.
 - **Open Source Project:** Source code and assets organized in a version-controlled repository.
 
@@ -37,7 +38,9 @@ To experience CTG VR, follow these steps:
 ## Contributors for this Project
 
 - Professor: Dr. Erdogan Dogdu
-- Student: Zhi Yong Li
-- Student: Luis Ocada
+- Student: Zhi Yong Li - Implemented the card game into the VR environment; Designed the complete card game logic
+- Student: Luis Ocada - Designed the AI boy animation; Enhanced the gameplay experience dynamically (the scoreboard UI, the game icons)
+- Student: Euijin Jung - Enhanced cybersecurity learning and the game environment with concept arts (the lobby, the game icons)
+- Student: Luke Anderson - Designed consistent UIs; Graphics enhancement of the game
 
 This is the end of the README page. Thank you for reading our README. The project is still in development, and we hope to add more concepts and polish.
