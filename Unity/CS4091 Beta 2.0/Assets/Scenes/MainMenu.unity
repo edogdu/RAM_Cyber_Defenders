@@ -2540,8 +2540,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Manager\n  Dr. Erdogan Dogdu\n\n  Team Members\n    Leo Li\n    
-    Euijin Jung\n      Luis Ocada"
+  m_text: "Project Manager\n  Dr. Erdogan Dogdu\n\n  Team Members\n    Leo Li / Luis
+    Ocada\n    Euijin Jung\n    Luke Anderson"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 500c8b014e8c041b8982d40b1db00225, type: 2}
   m_sharedMaterial: {fileID: -6674944201535329505, guid: 500c8b014e8c041b8982d40b1db00225,
