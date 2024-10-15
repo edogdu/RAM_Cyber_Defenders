@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1515829, g: 0.15147191, b: 0.19517085, a: 1}
+  m_IndirectSpecularColor: {r: 0.04725586, g: 0.04979828, b: 0.051315814, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1445,7 +1445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.3, y: 73.7}
+  m_AnchoredPosition: {x: 24.1, y: 79.1}
   m_SizeDelta: {x: 386.04, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233723442
@@ -2517,7 +2517,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.1, y: 46.799995}
+  m_AnchoredPosition: {x: -47.2, y: 49.4}
   m_SizeDelta: {x: 503.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &400843954
@@ -2540,8 +2540,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Manager\n  Dr. Erdogan Dogdu\n\n  Team Members\n    Leo Li / Luis
-    Ocada\n    Euijin Jung\n    Luke Anderson"
+  m_text: "Project Manager\n  Dr. Erdogan Dogdu\n  Dr. Roya Choupani\n  Leila Yarian\nTeam
+    Members\n  Leo Li / Luis Ocada\n  Euijin Jung\n  Luke Anderson"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 500c8b014e8c041b8982d40b1db00225, type: 2}
   m_sharedMaterial: {fileID: -6674944201535329505, guid: 500c8b014e8c041b8982d40b1db00225,
@@ -2569,8 +2569,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30.31
+  m_fontSizeBase: 30.31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6589,7 +6589,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 76.76, y: -10}
+  m_AnchoredPosition: {x: 73.3, y: -6.3}
   m_SizeDelta: {x: 153.52, y: 103.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &926022106
