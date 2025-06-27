@@ -35,6 +35,9 @@ To experience CTG VR, follow these steps:
 3. **Run the Game:** Build and run the game within your VR headset environment. Make sure your VR device is properly connected and configured.
 4. **Enjoy Learning:** Immerse yourself in the CTG VR world and start learning cybersecurity in a whole new way!
 
+For the further detailed instructions, check the guide below.
+[VR_CTG_setup_guide.pdf](https://github.com/user-attachments/files/20943059/VR_CTG_setup_guide.pdf)
+
 ## Download Game to Oculus Device
 
 1. **Set Developer Mode on your Oculus Device**
